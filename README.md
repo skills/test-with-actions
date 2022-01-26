@@ -5,11 +5,11 @@
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-<img src=TBD_social_image width=300 align=right>
+<img src=https://repository-images.githubusercontent.com/208895884/d36c6f80-586d-11ea-843a-e3d599e19549 width=300 align=right>
 
-# TBD course title
+# GitHub Actions: Continuous Integration
 
-_TBD course description_
+_Learn how to create workflows that enable you to use Continuous Integration (CI) for your projects._
 
 <!--
   <<< Author notes: Start of the course >>>
@@ -33,8 +33,8 @@ TBD welcome paragraph
 - **Who is this for**: TBD
 - **What you'll learn**: TBD
 - **What you'll build**: TBD
-- **Prerequisites**: TBD
-- **How long**: This course is TBD steps and takes less than TBD.
+- **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/githublearn/hello-github-actions) first.
+- **How long**: This course is 6 steps and takes less than two hours.
 
 </details>
 
@@ -47,7 +47,7 @@ TBD welcome paragraph
 -->
 
 <details id=1>
-<summary><strong>:TBD: Step 1: TBD</strong></summary>
+<summary><strong>:detective: Step 1: Add a test workflow</strong></summary>
 
 ### :wave: Welcome to "TBD"!
 
@@ -68,7 +68,7 @@ TBD welcome paragraph
 -->
 
 <details id=2>
-<summary><strong>:TBD: Step 2: TBD</strong></summary>
+<summary><strong>:shield: Step 2: Add your first test</strong></summary>
 
 ### :tada: You did TBD!
 
@@ -90,7 +90,7 @@ TBD
 -->
 
 <details id=3>
-<summary><strong>:TBD: Step 3: TBD</strong></summary>
+<summary><strong>:wrench: Step 3: Fix the test</strong></summary>
 
 ### Nice work TBD :sparkles:
 
@@ -112,7 +112,7 @@ TBD
 -->
 
 <details id=4>
-<summary><strong>:TBD: Step 4: TBD</strong></summary>
+<summary><strong>:notebook: Step 4: Upload test reports</strong></summary>
 
 ### Nicely done friend! :sparkles:
 
@@ -134,11 +134,33 @@ TBD
 -->
 
 <details id=5>
-<summary><strong>:shipit: Step 5: Merge your pull request</strong></summary>
+<summary><strong>:judge: Step 5: Add branch protections</strong></summary>
+
+### Nicely done friend! :sparkles:
+
+TBD
+
+**What is _TBD_**: TBD
+
+### :keyboard: Activity: TBD
+
+1. TBD
+1. Wait about 20 seconds then refresh this page for the next step
+
+</details>
+
+<!--
+  <<< Author notes: Step 6 >>>
+  Start this step by acknowledging the first step.
+  Define terms and link to docs.github.com.
+-->
+
+<details id=6>
+<summary><strong>:shipit: Step 6: Merge your pull request</strong></summary>
 
 ### :heart: Almost there TBD!
 
-You can now [merge](https://help.github.com/articles/github-glossary/#merge) your pull request!
+You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
 ### :keyboard: Activity: Merge your pull request
 

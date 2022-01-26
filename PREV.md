@@ -1,15 +1,6 @@
-# GitHub Actions: Continuous Integration
-
-_Learn how to create workflows that enable you to use Continuous Integration (CI) for your projects._
-
-![](https://repository-images.githubusercontent.com/208895884/d36c6f80-586d-11ea-843a-e3d599e19549)
-
-**Tags**: GitHub Actions, Workflows, CI, Continuous Integration, Integration
-
----
 
 GitHub Actions makes it easier than ever to incorporate continuous integration (CI) into your repositories. 
-​
+
 This course will get you from zero-to-CI by setting up two workflow files to automate the way you work.
 
 
