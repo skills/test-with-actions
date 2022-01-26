@@ -23,16 +23,16 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 <details id=0 open>
 <summary><strong>:golf: Start</strong></summary>
 
-**To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/githublearn/TBD/generate)**
+**To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/githublearn/continuous-integration/generate)**
 
 > We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
 > After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
 
-TBD welcome paragraph
+[Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
 
-- **Who is this for**: TBD
-- **What you'll learn**: TBD
-- **What you'll build**: TBD
+- **Who is this for**: Developers, DevOps Engineers, new GitHub users, students, teams.
+- **What you'll learn**: What is Continous Integration, how to use GitHub Actions for continuous integration, how to create a workflow that runs tests and produces test reports.
+- **What you'll build**: We'll use [Markdown lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
 - **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/githublearn/hello-github-actions) first.
 - **How long**: This course is 6 steps and takes less than two hours.
 
@@ -49,7 +49,7 @@ TBD welcome paragraph
 <details id=1>
 <summary><strong>:detective: Step 1: Add a test workflow</strong></summary>
 
-### :wave: Welcome to "TBD"!
+### :wave: Welcome to "GitHub Actions: Continuous Integration"!
 
 **What is _TBD_**: TBD
 
@@ -180,15 +180,18 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 
 ### Congratulations friend, you've completed this course!
 
-<img src=TBD alt=celebrate width=300 align=right>
+<img src=https://octodex.github.com/images/Fintechtocat.png alt=celebrate width=300 align=right>
 
 Here's a recap of all the tasks you've accomplished in your repository:
 
-- TBD
+- We created an Actions workflow to lint our Markdown files.
+- You caught an issue in a file and fixed the issue before it could make it to `main`.
+- You learned how to use build artifacts for test reports.
+- You enabled branch protections to require the workflow to pass before merging.
 
 ### What's next?
 
-- TBD
+- Get more ideas of what you can do with [awesome Actions](https://github.com/sdras/awesome-actions).
 - We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34)
 - [Take another GitHub Learn Course](https://github.com/githublearn)
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started)
