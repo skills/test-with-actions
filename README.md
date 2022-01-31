@@ -32,7 +32,7 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 
 - **Who is this for**: Developers, DevOps Engineers, new GitHub users, students, teams.
 - **What you'll learn**: What is Continous Integration, how to use GitHub Actions for continuous integration, how to create a workflow that runs tests and produces test reports.
-- **What you'll build**: We'll use [Markdown lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
+- **What you'll build**: We'll use [remark-lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
 - **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/githublearn/hello-github-actions) first.
 - **How long**: This course is 6 steps and takes less than two hours.
 
@@ -89,7 +89,7 @@ Adding that file to this branch is enough for GitHub Actions to begin running CI
 
 When a GitHub Actions workflow is running, you should see some checks in progress, like the screenshot below.
 
-![checks in progress in a merge box](https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png)
+<img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=300 />
 
 If the checks don't appear or if the checks are stuck in progress, there's a few things you can do to try and trigger them:
 
