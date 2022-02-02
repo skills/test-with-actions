@@ -35,3 +35,9 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Course specific #
+###################
+node_modules
+package.json
+package-lock.json

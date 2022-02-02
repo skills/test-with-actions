@@ -65,7 +65,9 @@ First, let's add a workflow to lint our Markdown files in this repository.
 1. Add the following step to your workflow:
    ```yaml
       - name: Run markdown lint
-        run: TBD
+        run: |
+          npm install remark-cli remark-preset-lint-consistent
+          npx remark . --use remark-preset-lint-consistent
    ```
 1. Click **Start commit**, and choose to make a new branch named `ci`.
 1. Click **Propose a new file**.
@@ -166,20 +168,20 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
 
 1. Edit your workflow file.
 1. Add a step to your `build` job that uses the `upload-artifacts` action.
-    ```yaml
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v2
+   ```yaml
+     build:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v2
 
-          - name: Run markdown lint
-            run: TBD
+         - name: Run markdown lint
+           run: TBD
 
-          - uses: actions/upload-artifact@main
-            with:
-              name: TBD
-              path: public/
-    ```
+         - uses: actions/upload-artifact@main
+           with:
+             name: TBD
+             path: public/
+  ```
 1. Commit your change to this branch.
 1. Wait about 20 seconds then refresh this page for the next step
 
