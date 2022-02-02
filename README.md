@@ -72,7 +72,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
 1. Click **Start commit**, and choose to make a new branch named `ci`.
 1. Click **Propose a new file**.
 1. Click **Create pull request**.
-1. Wait about *20 seconds* then refresh this page for the next step
+1. Wait about 20 seconds then refresh this page for the next step
 
 </details>
 
@@ -181,7 +181,7 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
            with:
              name: TBD
              path: public/
-  ```
+   ```
 1. Commit your change to this branch.
 1. Wait about 20 seconds then refresh this page for the next step
 
