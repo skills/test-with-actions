@@ -67,12 +67,12 @@ First, let's add a workflow to lint our Markdown files in this repository.
       - name: Run markdown lint
         run: |
           npm install remark-cli remark-preset-lint-consistent
-          npx remark . --use remark-preset-lint-consistent
+          npx remark . --use remark-preset-lint-consistent --frail
    ```
 1. Click **Start commit**, and choose to make a new branch named `ci`.
 1. Click **Propose a new file**.
 1. Click **Create pull request**.
-1. Wait about 20 seconds then refresh this page for the next step
+1. Wait about *20 seconds* then refresh this page for the next step
 
 </details>
 
