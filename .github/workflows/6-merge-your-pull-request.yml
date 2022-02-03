@@ -1,14 +1,16 @@
-name: Step 3, TBD
+name: Step 6, Merge your pull request
 
-# This step triggers after TBD
-# This step sets STEP to 4
-# This step closes <details id=3> and opens <details id=4>
+# This step triggers after a pull requst is merged to `main`
+# This step sets STEP to X
+# This step closes <details id=6> and opens <details id=X>
 
-# This will run every time we TBD
+# This will run every time we create push a commit to `main`
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  TBD:
+  push:
+    branches:
+      - main
 
 permissions:
   # Need `contents: read` to checkout the repository
@@ -16,12 +18,12 @@ permissions:
   contents: write
 
 jobs:
-  on_TBD:
-    name: On TBD
+  on_merge:
+    name: On merge
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 3 (see update-step.sh)
+    # 2. The STEP is currently 6 (see update-step.sh)
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: ${{ github.repository_owner != 'githublearn' }}
@@ -36,15 +38,13 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
 
-      # TBD include any further steps here
-
-      # Update README to close <details id=3>
-      # and open <details id=4>
-      # and set STEP to '4'
-      - name: Update to step 4
+      # Update README to close <details id=6>
+      # and open <details id=X>
+      # and set STEP to 'X'
+      - name: Update to step X
         run: ./.github/script/update-step.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FROM_STEP: 3
-          TO_STEP: 4
+          FROM_STEP: 6
+          TO_STEP: X
           BRANCH_NAME: TBD
