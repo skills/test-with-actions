@@ -8,6 +8,7 @@ name: Step 3, Upload test reports
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
+  push:
     branches:
       - ci
     paths:
