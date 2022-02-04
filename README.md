@@ -176,7 +176,7 @@ Similar to the upload action to send artifacts to the storage, you can use anoth
   Define terms and link to docs.github.com.
 -->
 
-<details id=5>
+<details id=4>
 <summary><strong>:judge: Step 4: Add branch protections</strong></summary>
 
 ### Great job uploading test reports! :sparkles:
