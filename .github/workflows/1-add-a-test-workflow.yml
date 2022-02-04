@@ -1,14 +1,18 @@
 name: Step 1, Add a test workflow
 
-# This step triggers after TBD
+# This step triggers after push to the ci.yml file on the ci branch
 # This step sets STEP to 2
 # This step closes <details id=1> and opens <details id=2>
 
-# This will run every time we TBD
+# This will run every time we push to the ci.yml file on the ci branch
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  TBD:
+  push:
+    branches:
+      - ci
+    paths:
+      - .github/workflows/ci.yml
 
 permissions:
   # Need `contents: read` to checkout the repository
@@ -16,8 +20,8 @@ permissions:
   contents: write
 
 jobs:
-  on_TBD:
-    name: On TBD
+  on_push_ci_file:
+    name: On push ci file
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
@@ -36,7 +40,12 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
 
-      # TBD include any further steps here
+      # Verify the learner added remark-lint
+      - name: Verify workflow
+        run: ./.github/script/check-file.sh
+        env:
+          FILE: .github/workflows/ci.yml
+          SEARCH: remark-preset-lint-consistent
 
       # Update README to close <details id=1>
       # and open <details id=2>
@@ -47,4 +56,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FROM_STEP: 1
           TO_STEP: 2
-          BRANCH_NAME: TBD
+          BRANCH_NAME: ci

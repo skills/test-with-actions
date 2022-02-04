@@ -34,7 +34,7 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 - **What you'll learn**: What is Continous Integration, how to use GitHub Actions for continuous integration, how to create a workflow that runs tests and produces test reports.
 - **What you'll build**: We'll use [remark-lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
 - **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/githublearn/hello-github-actions) first.
-- **How long**: This course is 6 steps and takes less than two hours.
+- **How long**: This course is 5 steps and takes less than two hours.
 
 </details>
 
@@ -53,6 +53,15 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 
 **What is _continuous integration_**: [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
 
+![An illustration split in two. On the left: illustration of how GitHub Actions terms are encapsulated. At the highest level: workflows and event triggers. Inside of workflows: jobs and definition of the build environment. Inside jobs: steps. Inside steps: a call to an action. On the right: the sequence: workflows, job, step, action.](https://user-images.githubusercontent.com/6351798/88589835-f5ce0900-d016-11ea-8c8a-0e7d7907c713.png)
+
+- **Workflow**: A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
+- **Job**: A job is a section of the workflow, and is made up of one or more steps. In this section of our workflow, the template defines the steps that make up the `build` job.
+- **Step**: A step represents one _effect_ of the automation. A step could be defined as a GitHub Action, or another unit, like printing something to the console.
+- **Action**: A GitHub Action is a piece of automation written in a way that is compatible with workflows. Actions can be written by GitHub, by the open source community, or you can write them yourself!
+
+You can read more about the [GitHub Actions workflow syntax](https://help.github.com/en/articles/workflow-syntax-for-github-actions).
+
 First, let's add a workflow to lint our Markdown files in this repository.
 
 ### :keyboard: Activity: Add a test workflow
@@ -69,6 +78,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
           npm install remark-cli remark-preset-lint-consistent
           npx remark . --use remark-preset-lint-consistent --frail
    ```
+   > We expect this to create a error build. We'll fix this in the next step.
 1. Click **Start commit**, and choose to make a new branch named `ci`.
 1. Click **Propose a new file**.
 1. Click **Create pull request**.
@@ -83,7 +93,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
 -->
 
 <details id=2>
-<summary><strong>:shield: Step 2: Add your first test</strong></summary>
+<summary><strong>:wrench: Step 2: Fix the test</strong></summary>
 
 ### :tada: Great job adding the templated workflow!
 
@@ -91,44 +101,7 @@ Adding that file to this branch is enough for GitHub Actions to begin running CI
 
 When a GitHub Actions workflow is running, you should see some checks in progress, like the screenshot below.
 
-<img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=300 />
-
-If the checks don't appear or if the checks are stuck in progress, there's a few things you can do to try and trigger them:
-
-- Refresh the page, it's possible the workflow ran and the page just hasn't been updated with that change.
-- Try making a commit on this branch. Our workflow is triggered with a `push` event, and committing to this branch will result in a new `push`.
-- Edit the workflow file on GitHub and ensure there are no red lines indicating a syntax problem.
-
-![An illustration split in two. On the left: illustration of how GitHub Actions terms are encapsulated. At the highest level: workflows and event triggers. Inside of workflows: jobs and definition of the build environment. Inside jobs: steps. Inside steps: a call to an action. On the right: the sequence: workflows, job, step, action.](https://user-images.githubusercontent.com/6351798/88589835-f5ce0900-d016-11ea-8c8a-0e7d7907c713.png)
-
-- **Workflow**: A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
-- **Job**: A job is a section of the workflow, and is made up of one or more steps. In this section of our workflow, the template defines the steps that make up the `build` job.
-- **Step**: A step represents one _effect_ of the automation. A step could be defined as a GitHub Action, or another unit, like printing something to the console.
-- **Action**: A GitHub Action is a piece of automation written in a way that is compatible with workflows. Actions can be written by GitHub, by the open source community, or you can write them yourself!
-
-You can read more about the [GitHub Actions workflow syntax](https://help.github.com/en/articles/workflow-syntax-for-github-actions).
-
-Let's continue working in our `ci` branch. We can easily add tests to make sure each change to our project meets our requirements.
-
-### :keyboard: Activity: Add your first test
-
-1. Update the Markdown linter to turn on the rule for TBD
-   > We expect this to create a error build. We'll fix this in the next step.
-1. **Commit changes**
-1. Wait about 20 seconds then refresh this page for the next step
-
-</details>
-
-<!--
-  <<< Author notes: Step 3 >>>
-  Start this step by acknowledging the first step.
-  Define terms and link to docs.github.com.
--->
-
-<details id=3>
-<summary><strong>:wrench: Step 3: Fix the test</strong></summary>
-
-### Nice work adding a new test :sparkles:
+<img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=400 />
 
 You can follow along as GitHub Actions runs your job by going to the **Actions tab** or by clicking on "Details" in the merge box below.
 
@@ -136,13 +109,19 @@ When the tests finish, you'll see a red X :x: or a green check mark :heavy_check
 
 **By looking at the logs, can you identify which tests failed?** To find it, go to one of the failed builds and scrolling through the log. Look for a section that lists all the unit tests. We're looking for the name of the test with an "x".
 
-![screenshot of a sample build log with the names of the tests blurred out](https://user-images.githubusercontent.com/16547949/65922013-e740a200-e3b1-11e9-8151-faf52c30201e.png)
+<img alt="screenshot of a sample build log with the names of the tests blurred out" src=https://user-images.githubusercontent.com/16547949/65922013-e740a200-e3b1-11e9-8151-faf52c30201e.png width=400 />
+
+If the checks don't appear or if the checks are stuck in progress, there's a few things you can do to try and trigger them:
+
+- Refresh the page, it's possible the workflow ran and the page just hasn't been updated with that change.
+- Try making a commit on this branch. Our workflow is triggered with a `push` event, and committing to this branch will result in a new `push`.
+- Edit the workflow file on GitHub and ensure there are no red lines indicating a syntax problem.
 
 ### :keyboard: Activity: Fix the test
 
 1. Update the code in the `ci` branch to get the test to pass. You need to look something like this:
    ```markdown
-   TBD
+   _underscore_
    ```
 1. **Commit changes**.
 1. Wait about 20 seconds then refresh this page for the next step.
@@ -150,13 +129,13 @@ When the tests finish, you'll see a red X :x: or a green check mark :heavy_check
 </details>
 
 <!--
-  <<< Author notes: Step 4 >>>
-  Start this step by acknowledging the first step.
+  <<< Author notes: Step 3 >>>
+  Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
-<details id=4>
-<summary><strong>:notebook: Step 4: Upload test reports</strong></summary>
+<details id=3>
+<summary><strong>:notebook: Step 3: Upload test reports</strong></summary>
 
 ### The workflow has finished running! :sparkles:
 
@@ -175,11 +154,13 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
          - uses: actions/checkout@v2
 
          - name: Run markdown lint
-           run: TBD
+           run: |
+             npm install remark-cli remark-preset-lint-consistent
+             npx remark . --use remark-preset-lint-consistent --frail
 
          - uses: actions/upload-artifact@main
            with:
-             name: TBD
+             name: remark-lint-report
              path: public/
    ```
 1. Commit your change to this branch.
@@ -190,13 +171,13 @@ Similar to the upload action to send artifacts to the storage, you can use anoth
 </details>
 
 <!--
-  <<< Author notes: Step 5 >>>
-  Start this step by acknowledging the first step.
+  <<< Author notes: Step 4 >>>
+  Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
 <details id=5>
-<summary><strong>:judge: Step 5: Add branch protections</strong></summary>
+<summary><strong>:judge: Step 4: Add branch protections</strong></summary>
 
 ### Great job uploading test reports! :sparkles:
 
@@ -218,13 +199,13 @@ Protected branches ensure that collaborators on your repository cannot make irre
 </details>
 
 <!--
-  <<< Author notes: Step 6 >>>
-  Start this step by acknowledging the first step.
+  <<< Author notes: Step 5 >>>
+  Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
-<details id=6>
-<summary><strong>:shipit: Step 6: Merge your pull request</strong></summary>
+<details id=5>
+<summary><strong>:shipit: Step 5: Merge your pull request</strong></summary>
 
 ### :heart: Almost there!
 
