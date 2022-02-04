@@ -166,7 +166,7 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
              path: public/
    ```
 1. Commit your change to this branch.
-1. Wait about 20 seconds then refresh this page for the next step
+1. Wait about 20 seconds then refresh this page for the next step.
 
 Similar to the upload action to send artifacts to the storage, you can use another action built by GitHub to download these previously uploaded artifacts from the `build` job: [`actions/download-artifact`](https://github.com/actions/download-artifact). To save you time, we'll skip that step for this course.
 
@@ -196,7 +196,9 @@ Protected branches ensure that collaborators on your repository cannot make irre
 1. Check **Require status checks to pass before merging**.
 1. Check all build and test jobs that you'd like to see in the newly visible gray box.
 1. Click **Create**.
-1. Wait about 20 seconds then refresh this page for the next step
+1. Wait about 20 seconds then refresh this page for the next step.
+
+_Note that once you turn on branch protection, Actions can no longer push directly to `main`. You'll need to view the `ci` branch for the next step._
 
 </details>
 
@@ -218,6 +220,8 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 1. Click **Merge pull request**.
 1. Delete the branch `ci` (optional).
 1. Wait about 20 seconds then refresh this page for the next step.
+
+_Note that once you turn on branch protection, Actions can no longer push directly to `main`. You may need open the finish on your own._
 
 </details>
 
@@ -243,10 +247,10 @@ Here's a recap of all the tasks you've accomplished in your repository:
 ### What's next?
 
 - Get more ideas of what you can do with [awesome Actions](https://github.com/sdras/awesome-actions).
-- We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34)
-- [Take another GitHub Learn Course](https://github.com/githublearn)
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started)
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore)
+- We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34).
+- [Take another GitHub Learn Course](https://github.com/githublearn).
+- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
+- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 </details>
 
