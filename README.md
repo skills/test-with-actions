@@ -107,7 +107,7 @@ You can follow along as GitHub Actions runs your job by going to the **Actions t
 
 When the tests finish, you'll see a red X :x: or a green check mark :heavy_check_mark: in the merge box. At that point, you'll have access to logs for the build job and its associated steps.
 
-<!-- Note here: leave the italics with * instead of _ for the error case: -->
+<!-- Note here: Learners -- yup, you found the error! Course maintainers -- leave the italics with * instead of _ for the error case. -->
 
 *By looking at the logs, can you identify which tests failed?* To find it, go to one of the failed builds and scrolling through the log. Look for a section that lists all the unit tests. We're looking for the name of the test with an "x".
 
