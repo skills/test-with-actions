@@ -34,7 +34,7 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 - **What you'll learn**: What continous integration is, how to use GitHub Actions for CI, how to create a workflow that runs tests and produces test reports.
 - **What you'll build**: We'll use [remark-lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
 - **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/githublearn/hello-github-actions) first.
-- **How long**: This course is five steps long and takes less than two hours.
+- **How long**: This course is five steps long and takes less than two hours to complete.
 
 </details>
 
@@ -49,7 +49,7 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 <details id=1>
 <summary><strong>:detective: Step 1: Add a test workflow</strong></summary>
 
-### :wave: Welcome to "GitHub Actions: Continuous Integration"!
+### Welcome to "GitHub Actions: Continuous Integration"! :wave:
 
 **What is _continuous integration_?**: [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
 
@@ -95,7 +95,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
 <details id=2>
 <summary><strong>:wrench: Step 2: Fix the test</strong></summary>
 
-### :tada: Great job adding the templated workflow!
+### Great job adding the templated workflow! :tada:
 
 Adding that file to this branch is enough for GitHub Actions to begin running CI on your repository.
 
@@ -181,7 +181,7 @@ Similar to the upload action to send artifacts to the storage, you can use anoth
 <details id=4>
 <summary><strong>:judge: Step 4: Add branch protections</strong></summary>
 
-### Great job uploading test reports! :sparkles:
+### Great job uploading test reports! :partying_face:
 
 Take a look at the merge box, you'll notice you can merge this even though the review process hasn't been met.
 
@@ -211,7 +211,7 @@ _Note that once you turn on branch protection, Actions can no longer push direct
 <details id=5>
 <summary><strong>:shipit: Step 5: Merge your pull request</strong></summary>
 
-### :heart: Almost there!
+### Almost there! :heart:
 
 You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
