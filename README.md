@@ -31,10 +31,10 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
 
 - **Who is this for**: Developers, DevOps Engineers, new GitHub users, students, teams.
-- **What you'll learn**: What is Continous Integration, how to use GitHub Actions for continuous integration, how to create a workflow that runs tests and produces test reports.
+- **What you'll learn**: What continous integration is, how to use GitHub Actions for CI, how to create a workflow that runs tests and produces test reports.
 - **What you'll build**: We'll use [remark-lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
 - **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/githublearn/hello-github-actions) first.
-- **How long**: This course is 5 steps and takes less than two hours.
+- **How long**: This course is five steps long and takes less than two hours.
 
 </details>
 
@@ -51,16 +51,16 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 
 ### :wave: Welcome to "GitHub Actions: Continuous Integration"!
 
-**What is _continuous integration_**: [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
+**What is _continuous integration_?**: [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
 
 ![An illustration split in two. On the left: illustration of how GitHub Actions terms are encapsulated. At the highest level: workflows and event triggers. Inside of workflows: jobs and definition of the build environment. Inside jobs: steps. Inside steps: a call to an action. On the right: the sequence: workflows, job, step, action.](https://user-images.githubusercontent.com/6351798/88589835-f5ce0900-d016-11ea-8c8a-0e7d7907c713.png)
 
 - **Workflow**: A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
 - **Job**: A job is a section of the workflow, and is made up of one or more steps. In this section of our workflow, the template defines the steps that make up the `build` job.
 - **Step**: A step represents one _effect_ of the automation. A step could be defined as a GitHub Action, or another unit, like printing something to the console.
-- **Action**: A GitHub Action is a piece of automation written in a way that is compatible with workflows. Actions can be written by GitHub, by the open source community, or you can write them yourself!
+- **Action**: An action is a piece of automation written in a way that is compatible with workflows. Actions can be written by GitHub, by the open source community, or you can write them yourself!
 
-You can read more about the [GitHub Actions workflow syntax](https://help.github.com/en/articles/workflow-syntax-for-github-actions).
+To learn more, check out "[Workflow syntax for GitHub Actions](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions)" in the GitHub Docs.
 
 First, let's add a workflow to lint our Markdown files in this repository.
 
@@ -103,7 +103,7 @@ When a GitHub Actions workflow is running, you should see some checks in progres
 
 <img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=400 />
 
-You can follow along as GitHub Actions runs your job by going to the **Actions tab** or by clicking on "Details" in the merge box below.
+You can follow along as GitHub Actions runs your job by going to the **Actions** tab or by clicking on "Details" in the merge box below.
 
 When the tests finish, you'll see a red X :x: or a green check mark :heavy_check_mark: in the merge box. At that point, you'll have access to logs for the build job and its associated steps.
 
@@ -246,9 +246,9 @@ Here's a recap of all the tasks you've accomplished in your repository:
 
 ### What's next?
 
-- Get more ideas of what you can do with [awesome Actions](https://github.com/sdras/awesome-actions).
+- Get more ideas of what you can do with [awesome actions](https://github.com/sdras/awesome-actions).
 - We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34).
-- [Take another GitHub Learn Course](https://github.com/githublearn).
+- [Take another GitHub Learn course](https://github.com/githublearn).
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
