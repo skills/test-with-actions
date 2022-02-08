@@ -42,13 +42,14 @@ jobs:
           fetch-depth: 0 # Let's get all the branches
           ref: ci # Important, as normally `branch_protection_rule` event won't grab other branches
 
+      # TODO: figure out a better way to deal with the lock on `main`, merge conflict this creates
       # Update README to close <details id=4>
       # and open <details id=5>
       # and set STEP to '5'
-      - name: Update to step 5
-        run: ./.github/script/update-step.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FROM_STEP: 4
-          TO_STEP: 5
-          BRANCH_NAME: ci
+      # - name: Update to step 5
+      #   run: ./.github/script/update-step.sh
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     FROM_STEP: 4
+      #     TO_STEP: 5
+      #     BRANCH_NAME: ci

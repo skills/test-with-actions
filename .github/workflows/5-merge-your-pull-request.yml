@@ -38,13 +38,14 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
 
+      # TODO: figure out a better way to deal with the lock on `main`
       # Update README to close <details id=5>
       # and open <details id=X>
       # and set STEP to 'X'
-      - name: Update to step X
-        run: ./.github/script/update-step.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FROM_STEP: 5
-          TO_STEP: X
-          BRANCH_NAME: ci
+      # - name: Update to step X
+      #   run: ./.github/script/update-step.sh
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     FROM_STEP: 5
+      #     TO_STEP: X
+      #     BRANCH_NAME: ci
