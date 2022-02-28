@@ -21,10 +21,11 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 -->
 
 <details id=0 open>
-<summary><strong>:golf: Start</strong></summary>
+<summary><h2>:golf: Start</h2></summary>
 
-### [![start-course](https://user-images.githubusercontent.com/1221423/154366775-5491926f-9ed1-4a4a-a229-0810c0ed7e5e.svg)](https://github.com/githublearn/continuous-integration/generate)
+[![start-course](https://user-images.githubusercontent.com/1221423/154366775-5491926f-9ed1-4a4a-a229-0810c0ed7e5e.svg)](https://github.com/githublearn/continuous-integration/generate)
 
+> When you select **Start course** or **Use this template**, you will be prompted to create a new repository.
 > We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
 > After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
 
@@ -47,9 +48,9 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 -->
 
 <details id=1>
-<summary><strong>:detective: Step 1: Add a test workflow</strong></summary>
+<summary><h2>:detective: Step 1: Add a test workflow</h2></summary>
 
-### Welcome to "GitHub Actions: Continuous Integration"! :wave:
+_Welcome to "GitHub Actions: Continuous Integration"! :wave:_
 
 **What is _continuous integration_?**: [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
 
@@ -93,9 +94,9 @@ First, let's add a workflow to lint our Markdown files in this repository.
 -->
 
 <details id=2>
-<summary><strong>:wrench: Step 2: Fix the test</strong></summary>
+<summary><h2>:wrench: Step 2: Fix the test</h2></summary>
 
-### Great job adding the templated workflow! :tada:
+_Great job adding the templated workflow! :tada:_
 
 Adding that file to this branch is enough for GitHub Actions to begin running CI on your repository.
 
@@ -137,9 +138,9 @@ If the checks don't appear or if the checks are stuck in progress, there's a few
 -->
 
 <details id=3>
-<summary><strong>:notebook: Step 3: Upload test reports</strong></summary>
+<summary><h2>:notebook: Step 3: Upload test reports</h2></summary>
 
-### The workflow has finished running! :sparkles:
+_The workflow has finished running! :sparkles:_
 
 So what do we do when we need the work product of one job in another? We can use the built-in [artifact storage](https://docs.github.com/en/actions/advanced-guides/storing-workflow-data-as-artifacts) to save artifacts created from one job to be used in another job within the same workflow.
 
@@ -179,9 +180,9 @@ Similar to the upload action to send artifacts to the storage, you can use anoth
 -->
 
 <details id=4>
-<summary><strong>:judge: Step 4: Add branch protections</strong></summary>
+<summary><h2>:judge: Step 4: Add branch protections</h2></summary>
 
-### Great job uploading test reports! :partying_face:
+_Great job uploading test reports! :partying_face:_
 
 Take a look at the merge box, you'll notice you can merge this even though the review process hasn't been met.
 
@@ -209,9 +210,9 @@ Protected branches ensure that collaborators on your repository cannot make irre
 -->
 
 <details id=5>
-<summary><strong>:shipit: Step 5: Merge your pull request</strong></summary>
+<summary><h2>:shipit: Step 5: Merge your pull request</h2></summary>
 
-### Almost there! :heart:
+_Almost there! :heart:_
 
 You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
@@ -231,9 +232,9 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 -->
 
 <details id=X>
-<summary><strong>:checkered_flag: Finish</strong></summary>
+<summary><h2>:checkered_flag: Finish</h2></summary>
 
-### Congratulations friend, you've completed this course!
+_Congratulations friend, you've completed this course!_
 
 <img src=https://octodex.github.com/images/Fintechtocat.png alt=celebrate width=300 align=right>
 
