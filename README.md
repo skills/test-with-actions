@@ -5,8 +5,6 @@
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-<img src=https://user-images.githubusercontent.com/1221423/156946961-3a2d1fd7-2d28-425a-8f7a-aa3babbb6158.svg width=300 align=right>
-
 # GitHub Actions: Continuous Integration
 
 _Learn how to create workflows that enable you to use Continuous Integration (CI) for your projects._
@@ -21,7 +19,7 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 -->
 
 <details id=0 open>
-<summary><h2>:golf: Start</h2></summary>
+<summary><h2>Start</h2></summary>
 
 [![start-course](https://user-images.githubusercontent.com/1221423/154366775-5491926f-9ed1-4a4a-a229-0810c0ed7e5e.svg)](https://github.com/skills/continuous-integration/generate)
 
@@ -48,7 +46,7 @@ _Learn how to create workflows that enable you to use Continuous Integration (CI
 -->
 
 <details id=1>
-<summary><h2>:detective: Step 1: Add a test workflow</h2></summary>
+<summary><h2>Step 1: Add a test workflow</h2></summary>
 
 _Welcome to "GitHub Actions: Continuous Integration"! :wave:_
 
@@ -94,7 +92,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
 -->
 
 <details id=2>
-<summary><h2>:wrench: Step 2: Fix the test</h2></summary>
+<summary><h2>Step 2: Fix the test</h2></summary>
 
 _Great job adding the templated workflow! :tada:_
 
@@ -138,7 +136,7 @@ If the checks don't appear or if the checks are stuck in progress, there's a few
 -->
 
 <details id=3>
-<summary><h2>:notebook: Step 3: Upload test reports</h2></summary>
+<summary><h2>Step 3: Upload test reports</h2></summary>
 
 _The workflow has finished running! :sparkles:_
 
@@ -180,7 +178,7 @@ Similar to the upload action to send artifacts to the storage, you can use anoth
 -->
 
 <details id=4>
-<summary><h2>:judge: Step 4: Add branch protections</h2></summary>
+<summary><h2>Step 4: Add branch protections</h2></summary>
 
 _Great job uploading test reports! :partying_face:_
 
@@ -210,7 +208,7 @@ Protected branches ensure that collaborators on your repository cannot make irre
 -->
 
 <details id=5>
-<summary><h2>:chipmunk: Step 5: Merge your pull request</h2></summary>
+<summary><h2>Step 5: Merge your pull request</h2></summary>
 
 _Almost there! :heart:_
 
@@ -232,7 +230,7 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 -->
 
 <details id=X>
-<summary><h2>:checkered_flag: Finish</h2></summary>
+<summary><h2>Finish</h2></summary>
 
 _Congratulations friend, you've completed this course!_
 
