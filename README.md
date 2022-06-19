@@ -70,7 +70,8 @@ First, let's add a workflow to lint our Markdown files in this repository.
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab
 1. Go to the **Actions tab**.
-1. Search for "Simple workflow".
+1. Click **New workflow**.
+1. Search for "Simple workflow" and click **Configure**.
 1. Name your workflow `ci.yml`.
 1. Update the workflow to remove all steps other than the "checkout" step.
 1. Add the following step to your workflow:
