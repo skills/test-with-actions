@@ -76,12 +76,12 @@ First, let's add a workflow to lint our Markdown files in this repository.
 1. Update the workflow to remove all steps other than the "checkout" step.
 1. Add the following step to your workflow:
    ```yaml
-      - name: Run markdown lint
-        run: |
-          npm install remark-cli remark-preset-lint-consistent
-          npx remark . --use remark-preset-lint-consistent --frail
+        - name: Run markdown lint
+          run: |
+            npm install remark-cli remark-preset-lint-consistent
+            npx remark . --use remark-preset-lint-consistent --frail
    ```
-   > We expect this to create a error build. We'll fix this in the next step.
+   > Even after the code is indented properly in 'ci.yml', you will see a build error in GitHub Actions. We'll fix this in the next step.
 1. Click **Start commit**, and choose to make a new branch named `ci`.
 1. Click **Propose a new file**.
 1. Click **Create pull request**.
@@ -128,6 +128,7 @@ If the checks don't appear or if the checks are stuck in progress, there's a few
    ```markdown
    _underscore_
    ```
+1. Replace the * with an _ in line 115 of README.md
 1. **Commit changes**.
 1. Wait about 20 seconds then refresh this page for the next step.
 
