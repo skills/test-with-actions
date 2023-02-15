@@ -24,6 +24,7 @@ permissions:
 jobs:
   on_update_branch_protection:
     name: On update branch protection
+    needs: get_current_step
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
