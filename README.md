@@ -81,7 +81,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
             npm install remark-cli remark-preset-lint-consistent
             npx remark . --use remark-preset-lint-consistent --frail
    ```
-   > Even after the code is indented properly in 'ci.yml', you will see a build error in GitHub Actions. We'll fix this in the next step.
+   > Even after the code is indented properly in `ci.yml`, you will see a build error in GitHub Actions. We'll fix this in the next step.
 1. Click **Start commit**, and choose to make a new branch named `ci`.
 1. Click **Propose a new file**.
 1. Click **Create pull request**.
