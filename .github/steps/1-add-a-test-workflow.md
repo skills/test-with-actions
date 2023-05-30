@@ -1,4 +1,3 @@
-
 <!--
   <<< Author notes: Step 1 >>>
   Choose 3-5 steps for your course.
@@ -34,14 +33,13 @@ First, let's add a workflow to lint our Markdown files in this repository.
 1. Update the workflow to remove all steps other than the "checkout" step.
 1. Add the following step to your workflow:
    ```yaml
-        - name: Run markdown lint
-          run: |
-            npm install remark-cli remark-preset-lint-consistent
-            npx remark . --use remark-preset-lint-consistent --frail
+   - name: Run markdown lint
+     run: |
+       npm install remark-cli remark-preset-lint-consistent
+       npx remark . --use remark-preset-lint-consistent --frail
    ```
    > Even after the code is indented properly in `ci.yml`, you will see a build error in GitHub Actions. We'll fix this in the next step.
 1. Click **Start commit**, and choose to make a new branch named `ci`.
 1. Click **Propose a new file**.
 1. Click **Create pull request**.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-

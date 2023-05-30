@@ -1,5 +1,3 @@
-
-
 <!--
   <<< Author notes: Step 3 >>>
   Start this step by acknowledging the previous step.
@@ -18,22 +16,24 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
 
 1. Edit your workflow file.
 1. Add a step to your `build` job that uses the `upload-artifacts` action.
+
    ```yaml
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v3
+   build:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
 
-         - name: Run markdown lint
-           run: |
-             npm install remark-cli remark-preset-lint-consistent
-             npx remark . --use remark-preset-lint-consistent --frail
+       - name: Run markdown lint
+         run: |
+           npm install remark-cli remark-preset-lint-consistent
+           npx remark . --use remark-preset-lint-consistent --frail
 
-         - uses: actions/upload-artifact@v3
-           with:
-             name: remark-lint-report
-             path: public/
+       - uses: actions/upload-artifact@v3
+         with:
+           name: remark-lint-report
+           path: public/
    ```
+
 1. Commit your change to this branch.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 

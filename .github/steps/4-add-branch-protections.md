@@ -1,4 +1,3 @@
-
 <!--
   <<< Author notes: Step 4 >>>
   Start this step by acknowledging the previous step.
