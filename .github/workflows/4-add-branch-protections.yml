@@ -55,7 +55,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # Let's get all the branches
+          fetch-depth: 0 # Let's get all the branches.
           ref: ci # Important, as normally `branch_protection_rule` event won't grab other branches
 
       # TODO: figure out a better way to deal with the lock on `main`, merge conflict this creates
