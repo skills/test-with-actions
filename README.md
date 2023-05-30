@@ -15,8 +15,7 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
   and tell the learner why they should take the course.
 -->
 
-<details id=0 open>
-<summary><h2>Welcome</h2></summary>
+## Welcome
 
 [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
 
@@ -24,7 +23,7 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
 - **What you'll learn**: What continuous integration is, how to use GitHub Actions for CI, how to create a workflow that runs tests and produces test reports.
 - **What you'll build**: We'll use [remark-lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
 - **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/skills/hello-github-actions) first.
-- **How long**: This course  takes less than two hours to complete.
+- **How long**: This course takes less than two hours to complete.
 
 In this course, you will:
 
@@ -54,7 +53,7 @@ In this course, you will:
    - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 1 >>>
@@ -64,8 +63,7 @@ In this course, you will:
   Encourage users to open new tabs for steps!
 -->
 
-<details id=1>
-<summary><h2>Step 1: Add a test workflow</h2></summary>
+## Step 1: Add a test workflow
 
 _Welcome to "GitHub Actions: Continuous Integration"! :wave:_
 
@@ -103,7 +101,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
 1. Click **Create pull request**.
 1. Wait about 20 seconds then refresh this page for the next step
 
-</details>
+
 
 <!--
   <<< Author notes: Step 2 >>>
@@ -111,8 +109,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
   Define terms and link to docs.github.com.
 -->
 
-<details id=2>
-<summary><h2>Step 2: Fix the test</h2></summary>
+## Step 2: Fix the test
 
 _Great job adding the templated workflow! :tada:_
 
@@ -145,7 +142,7 @@ If the checks don't appear or if the checks are stuck in progress, there's a few
 1. **Commit changes**.
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 3 >>>
@@ -153,8 +150,7 @@ If the checks don't appear or if the checks are stuck in progress, there's a few
   Define terms and link to docs.github.com.
 -->
 
-<details id=3>
-<summary><h2>Step 3: Upload test reports</h2></summary>
+## Step 3: Upload test reports
 
 _The workflow has finished running! :sparkles:_
 
@@ -187,7 +183,7 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
 
 Similar to the upload action to send artifacts to the storage, you can use another action built by GitHub to download these previously uploaded artifacts from the `build` job: [`actions/download-artifact`](https://github.com/actions/download-artifact). To save you time, we'll skip that step for this course.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 4 >>>
@@ -195,8 +191,7 @@ Similar to the upload action to send artifacts to the storage, you can use anoth
   Define terms and link to docs.github.com.
 -->
 
-<details id=4>
-<summary><h2>Step 4: Add branch protections</h2></summary>
+## Step 4: Add branch protections
 
 _Great job uploading test reports! :partying_face:_
 
@@ -217,7 +212,7 @@ Protected branches ensure that collaborators on your repository cannot make irre
 
 <!-- Wait about 20 seconds then refresh this page for the next step. -->
 
-</details>
+
 
 <!--
   <<< Author notes: Step 5 >>>
@@ -225,8 +220,7 @@ Protected branches ensure that collaborators on your repository cannot make irre
   Define terms and link to docs.github.com.
 -->
 
-<details id=5>
-<summary><h2>Step 5: Merge your pull request</h2></summary>
+## Step 5: Merge your pull request
 
 _Almost there! :heart:_
 
@@ -240,15 +234,14 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 
 <!-- Wait about 20 seconds then refresh this page for the next step. -->
 
-</details>
+
 
 <!--
   <<< Author notes: Finish >>>
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-<details id=X>
-<summary><h2>Finish</h2></summary>
+## Finish
 
 _Congratulations friend, you've completed this course!_
 
@@ -269,7 +262,7 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
-</details>
+
 
 <!--
   <<< Author notes: Footer >>>
