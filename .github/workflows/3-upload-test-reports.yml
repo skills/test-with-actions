@@ -58,10 +58,10 @@ jobs:
 
       # Verify the learner added actions/upload-artifact.
       - name: Verify workflow
-        run: ./.github/script/check-file.sh
-        env:
-          FILE: .github/workflows/ci.yml
-          SEARCH: actions/upload-artifact
+        uses: skills/action-check-file@v1
+        with:
+          file: .github/workflows/ci.yml
+          search: actions/upload-artifact
 
       # In README.md, switch step 3 for step 4.
       - name: Update to step 4
