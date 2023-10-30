@@ -17,11 +17,11 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
 1. Edit your workflow file.
 1. Add a step to your `build` job that uses the `upload-artifacts` action.
 
-   ```yaml
+   ```yml
    build:
      runs-on: ubuntu-latest
      steps:
-       - uses: actions/checkout@v3
+       - uses: actions/checkout@v4
 
        - name: Run markdown lint
          run: |

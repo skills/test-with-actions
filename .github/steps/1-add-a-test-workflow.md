@@ -32,7 +32,7 @@ First, let's add a workflow to lint our Markdown files in this repository.
 1. Name your workflow `ci.yml`.
 1. Update the workflow to remove all steps other than the "checkout" step.
 1. Add the following step to your workflow:
-   ```yaml
+   ```yml
    - name: Run markdown lint
      run: |
        npm install remark-cli remark-preset-lint-consistent
