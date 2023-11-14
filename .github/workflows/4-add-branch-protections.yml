@@ -11,8 +11,6 @@ on:
     types:
       - created
       - edited
-    branches:
-      - main
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
