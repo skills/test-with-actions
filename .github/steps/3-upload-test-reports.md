@@ -25,13 +25,13 @@ To upload artifacts to the artifact storage, we can use an action built by GitHu
 
        - name: Run markdown lint
          run: |
-           npm install remark-cli remark-preset-lint-consistent
-           npx remark . --use remark-preset-lint-consistent --frail
+           npm install remark-cli remark-preset-lint-consistent vfile-reporter-json
+           npx remark . --use remark-preset-lint-consistent --report vfile-reporter-json 2> remark-lint-report.json
 
        - uses: actions/upload-artifact@v3
          with:
            name: remark-lint-report
-           path: public/
+           path: remark-lint-report.json
    ```
 
 1. Commit your change to this branch.
