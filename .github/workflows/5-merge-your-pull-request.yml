@@ -4,14 +4,14 @@ name: Step 5, Merge your pull request
 # This workflow updates from step 5 to step X.
 
 # This will run every time we create push a commit to `main`.
-# Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
+# Reference: https://docs.github.com/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   push:
     branches:
       - main
 
-# Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+# Reference: https://docs.github.com/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository.
   # Need `contents: write` to update the step metadata.
@@ -38,8 +38,8 @@ jobs:
     # We will only run this action when:
     # 1. This repository isn't the template repository.
     # 2. The step is currently 5.
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
+    # Reference: https://docs.github.com/actions/learn-github-actions/contexts
+    # Reference: https://docs.github.com/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
           && needs.get_current_step.outputs.current_step == 5 }}

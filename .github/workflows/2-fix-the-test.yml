@@ -4,7 +4,7 @@ name: Step 2, Fix the test
 # This workflow updates from step 2 to step 3.
 
 # This will run every time we push to README.md on the ci branch.
-# Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
+# Reference: https://docs.github.com/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   push:
@@ -14,7 +14,7 @@ on:
       - README.md
       - resume.md
 
-# Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+# Reference: https://docs.github.com/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository.
   # Need `contents: write` to update the step metadata.
@@ -41,8 +41,8 @@ jobs:
     # We will only run this action when:
     # 1. This repository isn't the template repository.
     # 2. The step is currently 2.
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
+    # Reference: https://docs.github.com/actions/learn-github-actions/contexts
+    # Reference: https://docs.github.com/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
           && needs.get_current_step.outputs.current_step == 2 }}

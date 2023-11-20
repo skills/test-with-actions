@@ -21,5 +21,5 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - Get more ideas of what you can do with [awesome actions](https://github.com/sdras/awesome-actions).
 - We'd love to hear what you thought of this course [in our discussion board](https://github.com/orgs/skills/discussions/categories/test-with-actions).
 - [Take another GitHub Skills course](https://github.com/skills).
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
+- [Read the GitHub Getting Started docs](https://docs.github.com/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
