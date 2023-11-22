@@ -27,8 +27,8 @@ First, let's add a workflow to *lint* (clean, like a lint roller) our Markdown f
 
 1. Open a new browser tab, and work through the following steps in that tab while you read the instructions in this tab.
 1. Go to the **Actions tab**.
-1. Select **New workflow**.
-1. Search for "Simple workflow" and select **Configure**.
+1. Click **New workflow**.
+1. Search for "Simple workflow" and click **Configure**.
 1. Name your workflow `ci.yml`.
 1. Update the workflow by deleting the last two steps.
 1. Add the following step at the end of your workflow:
@@ -39,7 +39,7 @@ First, let's add a workflow to *lint* (clean, like a lint roller) our Markdown f
        npx remark . --use remark-preset-lint-consistent --frail
    ```
    > Even after the code is indented properly in `ci.yml`, you will see a build error in GitHub Actions. We'll fix this in the next step.
-1. Select **Commit changes...**, and choose to make a new branch named `ci`.
-1. Select **Propose changes**.
-1. Select **Create pull request**.
+1. Click **Commit changes...**, and choose to make a new branch named `ci`.
+1. Click **Propose changes**.
+1. Click **Create pull request**.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.

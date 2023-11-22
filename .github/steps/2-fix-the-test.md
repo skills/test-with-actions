@@ -14,7 +14,7 @@ When a GitHub Actions workflow is running, you should see some checks in progres
 
 <img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=400 />
 
-You can follow along as GitHub Actions runs your job by going to the **Actions** tab or by selecting "Details" in the merge box below.
+You can follow along as GitHub Actions runs your job by going to the **Actions** tab or by clicking "Details" in the merge box below.
 
 When the tests finish, you'll see a red X :x: or a green check mark :heavy_check_mark: in the merge box. At that point, you can access the logs for the build job and its associated steps.
 
