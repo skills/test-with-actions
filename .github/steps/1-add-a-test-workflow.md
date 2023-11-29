@@ -21,7 +21,7 @@ _Welcome to "GitHub Actions: Continuous Integration"! :wave:_
 
 To learn more, check out [Workflow syntax for GitHub Actions](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions) in the GitHub Docs.
 
-First, let's add a workflow to *lint* (clean, like a lint roller) our Markdown files in this repository. This workflow has a deliberate error in it ("npx" should be "npm"), which we'll debug in the next unit.
+First, let's add a workflow to lint (clean, like a lint roller) our Markdown files in this repository.
 
 ### :keyboard: Activity: Add a test workflow
 
