@@ -42,4 +42,4 @@ First, let's add a workflow to lint (clean, like a lint roller) our Markdown fil
 1. Click **Commit changes...**, and choose to make a new branch named `ci`.
 1. Click **Propose changes**.
 1. Click **Create pull request**.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.
+1. Wait about 20 seconds and then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.
