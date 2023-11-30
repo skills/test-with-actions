@@ -21,6 +21,4 @@ Protected branches ensure that collaborators on your repository cannot make irre
 1. Check **Require status checks to pass before merging**.
 1. Check all build and test jobs that you'd like to see in the newly visible gray box.
 1. Click **Save changes**.
-1. _Once you turn on branch protection, Actions can no longer push directly to `main`. You'll need to open the next step on your own._
-
-<!-- Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step. -->
+1. _Once you turn on branch protection, Actions can no longer push directly to the `main` branch. Wait about 20 seconds and then go to the `ci` branch. [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step on the `ci` branch. You'll need to follow instructions on this branch._
