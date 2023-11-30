@@ -18,6 +18,7 @@ Protected branches ensure that collaborators on your repository cannot make irre
 1. Click **Add branch protection rule** under "Branch protection rules".
 1. Type `main` in **Branch name pattern**.
 1. Check **Require a pull request before merging**.
+1. Uncheck **Require approvals**.
 1. Check **Require status checks to pass before merging**.
 1. Check all build and test jobs that you'd like to see in the newly visible gray box.
 1. Click **Save changes**.
