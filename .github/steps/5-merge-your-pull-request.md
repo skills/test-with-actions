@@ -12,11 +12,7 @@ You can now [merge](https://docs.github.com/get-started/quickstart/github-glossa
 
 ### :keyboard: Activity: Merge your pull request
 
+1. Go to the **Pull requests** tab.
+1. Resolve any merge conflicts. <!-- TODO: figure out a better way to deal with the merge conflicts. -->
 1. Click **Merge pull request**.
-1. Delete the branch `ci` (optional).
-1. _Once you turn on branch protection, Actions can no longer push directly to `main`. You'll need to open the "finish" on your own._
-    1. Navigate to the `.github` directory.
-    1. Select the `steps` directory.
-    1. Open the `X-finish.md` file.
-
-<!-- Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step. -->
+1. _Once you turn on branch protection, Actions can no longer push directly to the `main` branch. Make sure that you're on the `ci` branch in the page you're following instructions from._ Wait about 20 seconds and then refresh the page. [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.

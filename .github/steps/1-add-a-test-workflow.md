@@ -21,7 +21,7 @@ _Welcome to "GitHub Actions: Continuous Integration"! :wave:_
 
 To learn more, check out [Workflow syntax for GitHub Actions](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions) in the GitHub Docs.
 
-First, let's add a workflow to *lint* (clean, like a lint roller) our Markdown files in this repository. This workflow has a deliberate error in it ("npx" should be "npm"), which we'll debug in the next unit.
+First, let's add a workflow to lint (clean, like a lint roller) our Markdown files in this repository.
 
 ### :keyboard: Activity: Add a test workflow
 
@@ -42,4 +42,4 @@ First, let's add a workflow to *lint* (clean, like a lint roller) our Markdown f
 1. Click **Commit changes...**, and choose to make a new branch named `ci`.
 1. Click **Propose changes**.
 1. Click **Create pull request**.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.
+1. Wait about 20 seconds and then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.

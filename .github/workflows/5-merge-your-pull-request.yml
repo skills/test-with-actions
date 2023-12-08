@@ -55,12 +55,11 @@ jobs:
           fetch-depth: 0 # Let's get all the branches.
 
 
-      # TODO: figure out a better way to deal with the lock on `main`
       # In README.md, switch step 5 for step X.
-      # - name: Update to step X
-      #   uses: skills/action-update-step@v2
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     from_step: 5
-      #     to_step: X
-      #     branch_name: ci
+      - name: Update to step X
+        uses: skills/action-update-step@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 5
+          to_step: X
+          base_branch_name: ci
