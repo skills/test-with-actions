@@ -57,7 +57,7 @@ jobs:
           ref: ci # Important, as normally `branch_protection_rule` event won't grab other branches
 
       - name: Merge changes from origin main into ci
-        run: ./.github/scripts/merge-branch.sh
+        run: ./.github/script/merge-branch.sh
         env:
           branch1: main
           branch2: ci
