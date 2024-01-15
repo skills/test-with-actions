@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Make sure this file is executable
-# chmod +x .github/script/merge-branch.sh
+# chmod a+x .github/script/merge-branch.sh
 
 # USAGE: This script is used to merge a branch into another branch
 
