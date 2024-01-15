@@ -63,7 +63,6 @@ jobs:
           branch1: origin/main
           branch2: ci
 
-      # TODO: figure out a better way to deal with the merge conflict.
       # In README.md, switch step 4 for step 5.
       - name: Update to step 5
         uses: skills/action-update-step@v2
