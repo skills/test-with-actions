@@ -59,6 +59,7 @@ jobs:
       - name: Merge changes from origin/main into ci
         run: ./.github/script/merge-branch.sh
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch1: origin/main
           branch2: ci
 
