@@ -56,7 +56,7 @@ jobs:
           fetch-depth: 0 # Let's get all the branches.
           ref: ci # Important, as normally `branch_protection_rule` event won't grab other branches
 
-      - name: Merge changes from origin main into ci
+      - name: Merge changes from origin/main into ci
         run: |
           chmod +x ./.github/script/merge-branch.sh
           ./.github/script/merge-branch.sh
