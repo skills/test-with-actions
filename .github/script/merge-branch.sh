@@ -6,9 +6,9 @@
 
 # BACKGROUND: This operation is required to avoid conflicts between branches.
 
-# Setup commiter identity
-git config user.name github-actions
-git config user.email github-actions@github.com
+# Setup committer identity
+git config user.name github-actions[bot]
+git config user.email github-actions[bot]@users.noreply.github.com
 
 # Merge branch
 echo "If branch $branch2 exists, merge branch $branch1 into branch $branch2"
