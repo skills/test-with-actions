@@ -21,12 +21,12 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
 
 ## Welcome
 
-[Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits. The results post back to GitHub in the pull request. The goal is fewer issues in `main` and faster feedback as you work.
+[Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) can help you stick to your team’s quality standards by running tests and reporting the results on GitHub. CI tools run builds and tests, triggered by commits and pull requests. Results are available on GitHub - for example, in pull requests. The goal is fewer issues in `main` and faster feedback as you work.
 
 - **Who is this for**: Developers, DevOps Engineers, new GitHub users, students, teams.
 - **What you'll learn**: What continuous integration is, how to use GitHub Actions for CI, how to create a workflow that runs tests and produces test reports.
 - **What you'll build**: We'll use [remark-lint](https://github.com/remarkjs/remark-lint) to check the consistency of Markdown files.
-- **Prerequisites**: We assume you've completed [Hello GitHub Actions](https://github.com/skills/hello-github-actions) first.
+- **Prerequisites**: We assume you've completed the [Hello GitHub Actions](https://github.com/skills/hello-github-actions) course first.
 - **How long**: This course takes less than two hours to complete.
 
 In this course, you will:
