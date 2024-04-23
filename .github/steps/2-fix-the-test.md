@@ -1,9 +1,3 @@
-<!--
-  <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
--->
-
 ## Step 2: Fix the test
 
 _Great job adding the templated workflow! :tada:_

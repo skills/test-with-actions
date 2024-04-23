@@ -1,9 +1,3 @@
-<!--
-  <<< Author notes: Step 3 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
--->
-
 ## Step 3: Upload test reports
 
 _The workflow has finished running! :sparkles:_

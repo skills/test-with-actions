@@ -1,9 +1,3 @@
-<!--
-  <<< Author notes: Step 4 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
--->
-
 ## Step 4: Add branch protections
 
 _Great job uploading test reports! :partying_face:_
