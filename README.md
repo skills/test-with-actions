@@ -31,7 +31,7 @@ In this course, you will:
    - For owner, choose your personal account or an organization to host the repository.
    - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
    - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+3. After your new repository is created, wait about 20 seconds, then refresh the page that displays the README in the new repository. The contents of the README will be replaced by instructions for step 1 of this course. Follow the instructions for "Step 1: Add a test workflow."
 
 <footer>
 
