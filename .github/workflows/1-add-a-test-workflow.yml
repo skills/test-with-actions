@@ -7,11 +7,8 @@ name: Step 1, Add a test workflow
 # Reference: https://docs.github.com/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - ci
-    paths:
-      - .github/workflows/ci.yml
+  issue_comment:
+    types: [created]
 
 # Reference: https://docs.github.com/actions/security-guides/automatic-token-authentication
 permissions:
@@ -23,6 +20,10 @@ jobs:
   # Get the current step to only run the main job when the learner is on the same step.
   get_current_step:
     name: Check current step number
+    # Only run this job for pull requests (not issues) and if the comment contains the keyword.
+    if: |
+      github.event.issue.pull_request
+      && contains(github.event.comment.body, 'fail')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -55,13 +56,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Let's get all the branches.
-
-      # Verify the learner added remark-lint.
-      - name: Verify workflow
-        uses: skills/action-check-file@v1
-        with:
-          file: .github/workflows/ci.yml
-          search: remark-preset-lint-consistent
 
       # In README.md, switch step 1 for step 2.
       - name: Update to step 2
