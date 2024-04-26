@@ -1,29 +1,25 @@
-## Step 2: Fix the test
+## Step 2: Fix the test failure
 
-_Great job adding the templated workflow! :tada:_
+_Great job creating a workflow based on a template! :tada:_
 
-Adding that file to this branch is enough for GitHub Actions to begin running CI on your repository.
+The workflow you created contained one job, which installed and ran a linter. This checks for errors in all of the Markdown files in the repository, and logs details of all of the files that were checked. If any errors are found, the job fails.
 
-When a GitHub Actions workflow is running, you should see some checks in progress, like the screenshot below.
+Let's find out what's causing this test to fail on your pull request and fix the problem.
 
-<img alt="checks in progress in a merge box" src=https://user-images.githubusercontent.com/16547949/66080348-ecc5f580-e533-11e9-909e-c213b08790eb.png width=400 />
+### :keyboard: Activity: Fix the problem
 
-You can follow along as GitHub Actions runs your job by going to the **Actions** tab or by clicking "Details" in the merge box below.
+After the workflow jobs for a pull request have completed, you can find out what happened by looking at the log for each job.
 
-When the tests finish, you'll see a red X :x: or a green check mark :heavy_check_mark: in the merge box. At that point, you can access the logs for the build job and its associated steps.
+1. On your pull request, click **Details** beside the failing job.
 
-_By looking at the logs, can you identify which tests failed?_ To find it, go to one of the failed builds and scroll through the log. Look for a section that lists all the unit tests. We're looking for the name of the test with an "x".
+   The log for the "build" job is displayed, with the section for the "Run markdown lint" step expanded to show the details of the linter run.
 
-<img alt="screenshot of a sample build log with the names of the tests blurred out" src=https://user-images.githubusercontent.com/16547949/65922013-e740a200-e3b1-11e9-8151-faf52c30201e.png width=400 />
+   <img alt="Screenshot of the merge box in a pull request with a failing check highlighted." src="../../images/log-file-errors.png" width="800">
 
-If the checks don't appear or if the checks are stuck in progress, there's a few things you can do to try and trigger them:
-
-- Refresh the page, it's possible the workflow ran and the page just hasn't been updated with that change.
-- Try making a commit on this branch. Our workflow is triggered with a `push` event, and committing to this branch will result in a new `push`.
-- Edit the workflow file on GitHub and ensure there are no red lines indicating a syntax problem.
-
-### :keyboard: Activity: Fix the test
-
-1. Update the contents in the `ci` branch to get the test to pass. You need to look at the logs to see what caused the test to fail.
-1. **Commit changes**.
+1. Look for the error warning in the log. Identify the Markdown file and line number that contains the error, and find out what the error is.
+1. Click the **Code** tab of your repository, then click the branch dropdown and select the `ci` branch.
+1. Open the Markdown file that contains the error, and edit the file to fix the error.
+1. Commit your change directly to the `ci` branch.
+1. Display your pull request again, and wait for your workflow to run again. The job should now pass.
+1. Merge your pull request.
 1. Wait about 20 seconds and then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.

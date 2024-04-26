@@ -3,16 +3,14 @@ name: Step 2, Fix the test
 # This step triggers after we push to README.md on the ci branch.
 # This workflow updates from step 2 to step 3.
 
-# This will run every time we push to README.md on the ci branch.
+# This will run whenever a pull request agains the "main" branch is closed (e.g. merged).
 # Reference: https://docs.github.com/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
-  push:
+  pull_request:
     branches:
-      - ci
-    paths:
-      - README.md
-      - resume.md
+      - main
+    types:
+      - closed
 
 # Reference: https://docs.github.com/actions/security-guides/automatic-token-authentication
 permissions:
@@ -24,6 +22,8 @@ jobs:
   # Get the current step to only run the main job when the learner is on the same step.
   get_current_step:
     name: Check current step number
+    # Only run if the pull request was merged and the source branch was called "ci"
+    if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'ci'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
