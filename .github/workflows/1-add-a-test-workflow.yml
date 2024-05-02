@@ -1,9 +1,8 @@
 name: Step 1, Add a test workflow
 
-# This step triggers after push to the ci.yml file on the ci branch.
-# This workflow updates from step 1 to step 2.
+# This workflow updates the README from step 1 to step 2.
 
-# This will run every time we push to the ci.yml file on the ci branch.
+# This will run every time we add a comment to an issue or pull request.
 # Reference: https://docs.github.com/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
@@ -22,8 +21,8 @@ jobs:
     name: Check current step number
     # Only run this job for pull requests (not issues) and if the comment contains the keyword.
     if: |
-      github.event.issue.pull_request
-      && contains(github.event.comment.body, 'fail')
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, 'fail')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

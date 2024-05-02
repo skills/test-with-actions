@@ -26,6 +26,9 @@ First, let's add a workflow to lint (that is, clean, like a lint roller) our Mar
    If the "Simple workflow by GitHub" template isn't displayed, use the search field to find it.
 
 1. At the top of the workflow editor, change the name of the workflow file from `blank.yml` to `ci.yml`.
+
+   **Note**: For the purposes of this course, it's important to use the exact file names and branch names specified in the instructions.
+
 1. Update the workflow by deleting the last two steps.
 1. Add the following step at the end of your workflow:
 
@@ -62,6 +65,6 @@ First, let's add a workflow to lint (that is, clean, like a lint roller) our Mar
    - Edit the workflow file and commit a small change - for example, change one of the comments slightly. The workflow is triggered by a `push` event, so committing to the `ci` branch of your pull request will cause the workflow job to run again.
 
 1. Add a comment to your pull request containing the text: "The linter check is failing."
-1. Wait about 20 seconds and then refresh the page you're reading now (the README for the repository).
+1. Wait about 20 seconds and then refresh the page you're reading now (the README for the repository on the `main` branch).
 
    A separate Actions workflow in the repository (not the workflow you created) will run and will automatically replace the contents of this README file with instructions for the next step.

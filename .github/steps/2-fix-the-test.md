@@ -21,5 +21,5 @@ After the workflow jobs for a pull request have completed, you can find out what
 1. Open the Markdown file that contains the error, and edit the file to fix the error.
 1. Commit your change directly to the `ci` branch.
 1. Display your pull request again, and wait for your workflow to run again. The job should now pass.
-1. Merge your pull request.
-1. Wait about 20 seconds and then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.
+1. Add a comment to your pull request containing the text: "The linter check completed successfully."
+1. Wait about 20 seconds, then refresh this page (the one you're following instructions from). Another workflow will run and will replace the contents of this README file with instructions for the next step.
