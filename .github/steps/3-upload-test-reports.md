@@ -10,7 +10,7 @@ _The workflow has finished running! :sparkles:_
 
 So what do we do when we need the work product of one job in another? We can use the built-in [artifact storage](https://docs.github.com/actions/advanced-guides/storing-workflow-data-as-artifacts) to save artifacts created from one job to be used in another job within the same workflow.
 
-To upload artifacts to the artifact storage, we can use an action built by GitHub: [`actions/upload-artifacts`](https://github.com/actions/upload-artifact).
+To upload artifacts to the artifact storage, we can use an action built by GitHub: [`actions/upload-artifact`](https://github.com/actions/upload-artifact).
 
 ### :keyboard: Activity: Upload test reports
 
