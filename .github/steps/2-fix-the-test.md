@@ -31,5 +31,7 @@ If the checks don't appear or if the checks are stuck in progress, there's a few
 ### :keyboard: Activity: Fix the test
 
 1. Update the contents in the `ci` branch to get the test to pass. You need to look at the logs to see what caused the test to fail.
-1. **Commit changes**.
+1. To fix it, open the ci.yml file and go to the last line. You can either remove the dot "." or the "--frail" option in the command "npx remark . --use remark-preset-lint-consistent --frail".
+1. Make a change to the README.md file. Make sure the selected branch is "ci".
+1. Commit your changes to this branch.
 1. Wait about 20 seconds and then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/actions) will automatically update to the next step.
