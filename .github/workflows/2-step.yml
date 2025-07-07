@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/**
+      - .github/workflows/python-tests.yml
+      - .github/workflows/python-coverage.yml
 
 permissions:
   contents: read
