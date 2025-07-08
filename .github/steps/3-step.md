@@ -12,7 +12,7 @@ Pull requests have a nice advantage when a workflow is associated with them. The
 
 1. Return to the VS Code Codespace.
 
-1. Create a new branch based on `main` with the following name.
+1. Create a new branch based on `main` with the following name and **publish** it to GitHub.
 
    ```txt
    add-failure-test-cases
@@ -44,7 +44,7 @@ Pull requests have a nice advantage when a workflow is associated with them. The
          get_nth_fibonacci(n)
    ```
 
-1. Commit the changes and push them.
+1. Commit the changes and push them to GitHub.
 
 1. Return to the browser and create a pull request. Use the following details.
 
@@ -52,7 +52,7 @@ Pull requests have a nice advantage when a workflow is associated with them. The
    - **source:** `add-failure-test-cases`
    - **title**: `feat: Add tests to verify failure cases`
 
-1. After the pull request is started, look near the Merge button to see the workflows running.
+1. After the pull request is created, look near the Merge button to see the workflows running.
 
    - The workflows will fail, letting us know we have a test to fix.
    - The test coverage report will come shortly as a comment.

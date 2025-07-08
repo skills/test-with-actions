@@ -58,5 +58,5 @@ Let's learn how to automate this process using workflows in GitHub Actions.
 
 ```md
 @professortocat, I've run my coverage report.
-It looks good! What's next?
+It looks good! Over 90%! :) What's next?
 ```

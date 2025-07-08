@@ -20,7 +20,7 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
 ### ⌨️ Activity: Add a workflow to run tests
 
-1. Open a web browser tab and navigate to this exercise repository. The Codespace is not not needed right now.
+1. Open a web browser tab and navigate to this exercise repository. The Codespace is not needed right now.
 
 1. In the top navigation, select the **Actions** tab.
 
@@ -40,6 +40,12 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
    python-tests.yml
    ```
 
+1. Around line 4, update the workflow name.
+
+   ```yml
+   name: Python Tests
+   ```
+
 1. Around line 6, simplify the `on` trigger to only use pull requests.
 
    ```yml
@@ -51,7 +57,7 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 1. Around line 17, update the matrix strategy to use Python versions important to our project.
 
    ```yml
-   python-version: ["3.11", "3.12", "3.13"]
+   python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
    ```
 
 1. Around line 28, remove the unnecessary `pytest` dependency.
@@ -64,11 +70,11 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
    ```yml
    - name: Run tests
-      run: |
-        python -m unittest discover -s tests -p "*_test.py"
+     run: |
+       python -m unittest discover -s tests -p "*_test.py"
    ```
 
-1. Above the editor, on the right, click the **Commit changes...**.
+1. Above the editor, on the right, click the **Commit changes...**. Commit directly to the `main` branch.
 
 ### ⌨️ Activity: Add a workflow to show test coverage
 
@@ -93,18 +99,21 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
      pull_request:
        branches:
          - main
+
+   permissions:
+     pull-requests: write
    ```
 
 1. Add the `python-coverage` job and a first step that gets the repository content.
 
    ```yml
    jobs:
-   python-coverage:
-     runs-on: ubuntu-latest
+     python-coverage:
+       runs-on: ubuntu-latest
 
-     steps:
-       - name: Checkout code
-         uses: actions/checkout@v4
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v4
    ```
 
 1. Add steps to install Python and required packages.
@@ -125,30 +134,59 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 1. Add steps to run the coverage report and save for later use.
 
    ```yml
-   - name: Run tests with coverage
-     id: coverage
+   - name: Run tests to generate coverage details
      run: |
        coverage run -m unittest discover -s tests -p "*_test.py"
-       echo "coverage_report<<EOF" >> $GITHUB_OUTPUT
+
+   - name: Create reports in multiple formats
+     id: coverage-results
+     run: |
+       # Output full textual coverage report
+       echo "text_report<<EOF" >> $GITHUB_OUTPUT
        coverage report >> $GITHUB_OUTPUT
        echo "EOF" >> $GITHUB_OUTPUT
-   ```
 
-1. Add steps to generate other formats.
-
-   ```yml
-   - name: Generate coverage reports
-     run: |
+       # Generate XML and HTML reports
        coverage xml
        coverage html
+   ```
 
-   - name: Upload coverage reports
-     uses: actions/upload-artifact@v4
+1. Parse XML report to get any desired results.
+
+   ```yml
+   - name: Parse XML report to get overall percentage
+     id: coverage-summary
+     continue-on-error: true
+     uses: actions/github-script@v7
      with:
-       name: coverage-reports
-       path: |
-         coverage.xml
-         htmlcov/
+       script: |
+         const fs = require('fs');
+
+         // Read the XML file
+         const xmlData = fs.readFileSync('coverage.xml', 'utf8');
+
+         // Extract line-rate using regex (simpler than XML parsing)
+         const lineRateMatch = xmlData.match(/line-rate="([0-9.]+)"/);
+
+         if (!lineRateMatch) {
+            throw new Error('Could not find line-rate in coverage.xml');
+         }
+
+         // Save line-rate value to an output variable
+         const lineRate = lineRateMatch[1];
+         core.setOutput('line_rate', lineRate);
+   ```
+
+1. Attach coverage reports to workflow run.
+
+   ```yml
+   - name: Attach coverage reports to workflow run
+     uses: actions/upload-artifact@v4
+       with:
+         name: coverage-reports
+         path: |
+           coverage.xml
+           htmlcov/
    ```
 
 1. Add a final step to share the coverage report as a comment on the pull requests.
@@ -157,31 +195,60 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
    - name: Post coverage comment
      uses: actions/github-script@v7
      with:
-       script: |
-         const artifactsUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+     script: |
+       // The workflow run URL, where the reports are attached
+       const workflowRunUrl = `https://github.com/${process.env.REPO_NAME}/actions/runs/${process.env.RUN_ID}`;
 
-         const commentBody = `### Test Coverage Report
-         <details>
-         <summary>Coverage Details</summary>
+       // Calculate coverage percentage and determine pass/fail
+       const minimumCoverage = parseFloat(process.env.MINIMUM_COVERAGE).toFixed(2);
+       const coveragePercentage = parseFloat(process.env.COVERAGE_REPORT_LINE_RATE).toFixed(2);
+       const isPassingCoverage = coveragePercentage >= minimumCoverage;
+       const statusIcon = isPassingCoverage ? '✅' : '❌';
+       const statusText = isPassingCoverage ? 'PASS' : 'FAIL';
 
-         \`\`\`
-         ${steps.coverage.outputs.coverage_report}
-         \`\`\`
+       // Create the comment
+       const commentBody = `
+       ### ${statusIcon} Test Coverage Report
+       **Coverage Overall**: \`${coveragePercentage * 100}%\`
+       **Coverage Required**: \`${minimumCoverage * 100}%\`
 
-         </details>
+       <details>
+       <summary>📋 Detailed Coverage Report</summary>
+       <br>
 
-         [📊 Detailed HTML Coverage Report](${artifactsUrl})
-         `;
+       \`\`\`
+       ${process.env.COVERAGE_REPORT_TEXT}
+       \`\`\`
 
-         github.rest.issues.createComment({
-           owner: context.repo.owner,
-           repo: context.repo.repo,
-           issue_number: context.issue.number,
-           body: commentBody
-         });
+       </details>
+
+       ---
+
+       ### 🔗 Links
+       - [📊 View Run Details](${workflowRunUrl})
+       - [📁 Download Coverage Artifacts (XML, HTML)](${workflowRunUrl}#artifacts)
+
+       ---
+       <sub>🤖 This comment was automatically generated by the Python Coverage workflow</sub>
+       `;
+
+       github.rest.issues.createComment({
+         owner: process.env.REPO_NAME.split('/')[0],
+         repo: process.env.REPO_NAME.split('/')[1],
+         issue_number: Number(process.env.ISSUE_NUMBER),
+         body: commentBody
+       });
+     env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       RUN_ID: ${{ github.run_id }}
+       REPO_NAME: ${{ github.repository }}
+       ISSUE_NUMBER: ${{ github.event.pull_request.number }}
+       COVERAGE_REPORT_TEXT: ${{ steps.coverage-results.outputs.text_report }}
+       COVERAGE_REPORT_LINE_RATE: ${{ steps.coverage-summary.outputs.line_rate }}
+       MINIMUM_COVERAGE: 0.9
    ```
 
-1. Commit and push the coverage workflow.
+1. Commit and push the changes to your `python-coverage.yml` file to the `main` branch.
 
 > [!TIP]
 > We used custom steps here to show the flexibility of Actions. There are several AWESOME pre-made options from the community on the free [Actions Marketplace](https://github.com/marketplace?type=actions). Consider trying one of them out before you build your own!

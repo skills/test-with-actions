@@ -64,7 +64,7 @@ jobs:
         with:
           text-file: .github/workflows/python-tests.yml
           keyphrase: python -m unittest discover
-          minimum-occurrences: 3
+          minimum-occurrences: 1
           case-sensitive: false
 
       - name: Check for python coverage workflow
@@ -99,7 +99,7 @@ jobs:
 
   post_next_step_content:
     name: Post next step content
-    needs: [find_exercise]
+    needs: [find_exercise, check_step_work]
     runs-on: ubuntu-latest
     env:
       ISSUE_REPOSITORY: ${{ github.repository }}
