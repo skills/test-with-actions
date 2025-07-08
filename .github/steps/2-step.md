@@ -101,7 +101,7 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
    {% endraw %}
 
-   > **💡 Note:** This is not required, but it simplifies our Ruleset in next step. Rulesets require selecting specific job names.
+   > **💡 Note:** This is not usually required, but it simplifies our ruleset in the next step since rulesets require selecting specific job names.
 
 1. Above the editor, on the right, click the **Commit changes...** button. Commit directly to the `main` branch.
 

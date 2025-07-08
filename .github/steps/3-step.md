@@ -50,7 +50,7 @@ Pull requests have a nice advantage when a workflow is associated with them. The
 
    - **base:** `main`
    - **source:** `add-failure-test-cases`
-   - **title**: `feat: Add tests to verify failure cases`
+   - **title**: `Add tests to verify failure cases`
 
 1. After the pull request is created, look near the Merge button to see the many workflows running.
 

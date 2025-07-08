@@ -19,8 +19,8 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
      - **Include default branch**
      - **Include by pattern:** `main`
    - **Require status checks to pass**: ☑️ Checked
-     - `Python Tests`
-     - `Python Coverage`
+     - `python-coverage`
+     - `python-tests`
 
    <img width="300" alt="target branch settings" src="https://github.com/user-attachments/assets/9b68fd13-8348-401e-b1a3-6fd2f8744759" />
 
@@ -28,9 +28,11 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
 1. Click **Create**.
 
-1. Navigate back to the pull request.
+1. Navigate back to the pull request and refresh the page.
 
 1. The **Merge** is now disabled! Nice! 🥰
+
+   <img width="500" alt="failed tests and disabled merge button" src="https://github.com/user-attachments/assets/6dd46999-f98f-42fa-af65-b553c4e59c8e" />
 
 ### Activity: Fix the broken test and merge
 
@@ -59,3 +61,5 @@ self.assertGreaterEqual(minor, 8, "Python minor version must be >= 8")
 1. Wait a moment for the tests to complete. If they all pass, the merge button should activate!
 
 1. Click the **Merge** button. Congrats, you are all done!
+
+   <img width="500" alt="image" src="https://github.com/user-attachments/assets/1c75d9bc-62e9-429f-ad4d-45ea8b7d1a73" />
