@@ -2,9 +2,9 @@
 
 GitHub Actions is a great way to automate several of your recurring tasks, saving you time to work on the more challenging and fun problems!
 
-One of the most common tasks a developer deals with is testing their code. Unfortunately, this is often tedious and things get skipped or simply overlooked. Even more so, we often have to test against many frameworks, operating systems, and other situations, exaggerating the problem.
+One of the most common tasks a developer deals with is testing their code. Unfortunately, this is often tedious and things get skipped or simply overlooked. Even more so, we often need to test against many frameworks, operating systems, and other situations, exaggerating the problem.
 
-Let's learn how to automate this process using workflows in GitHub Actions.
+Let's learn how to automate this ever-growing need for testing our code by using workflows in GitHub Actions.
 
 ### What is Continuous Integration?
 

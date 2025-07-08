@@ -20,7 +20,7 @@ Pull requests have a nice advantage when a workflow is associated with them. The
 
 1. Open the `tests/calculations_test.py` file.
 
-1. Add the following 2 entries.
+1. Add the following 2 entries. (They are commented out.)
 
    ```py
    def test_area_of_circle_negative_radius(self):
@@ -52,9 +52,9 @@ Pull requests have a nice advantage when a workflow is associated with them. The
    - **source:** `add-failure-test-cases`
    - **title**: `feat: Add tests to verify failure cases`
 
-1. After the pull request is created, look near the Merge button to see the workflows running.
+1. After the pull request is created, look near the Merge button to see the many workflows running.
 
-   - The workflows will fail, letting us know we have a test to fix.
+   - Some of the workflows will fail, letting us know we have a test to fix.
    - The test coverage report will come shortly as a comment.
 
 1. With the pull request started, Mona should be busy checking your work and preparing the next steps.

@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build:
+  python-tests-by-version:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -31,3 +31,17 @@ jobs:
       - name: Run tests
         run: |
           python -m unittest discover -s tests -p "*_test.py"
+
+  python-tests:
+    runs-on: ubuntu-latest
+    needs: [python-tests-by-version]
+    if: always()
+    steps:
+      - name: All pass
+        if: ${{ !(contains(needs.*.result, 'failure')) }}
+        run: exit 0
+      - name: Any fail
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+
+      
