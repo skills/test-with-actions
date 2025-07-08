@@ -24,6 +24,8 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
    <img width="300" alt="target branch settings" src="https://github.com/user-attachments/assets/9b68fd13-8348-401e-b1a3-6fd2f8744759" />
 
+   <img width="300" alt="required status checks" src="https://github.com/user-attachments/assets/a5fe16aa-9d3a-4ab1-9406-a288b6c7b2b5" />
+
 1. Click **Create**.
 
 1. Navigate back to the pull request.
