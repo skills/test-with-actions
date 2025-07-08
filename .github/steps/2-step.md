@@ -83,6 +83,8 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
 1. At the very end, add another job that will verify all versions passed. Note: this is a job, not a step.
 
+   {% raw %}
+
    ```yml
    python-tests:
      runs-on: ubuntu-latest
@@ -96,6 +98,8 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
          if: ${{ contains(needs.*.result, 'failure') }}
          run: exit 1
    ```
+
+   {% endraw %}
 
    > **💡 Note:** This is not required, but it simplifies our Ruleset in next step. Rulesets require selecting specific job names.
 
@@ -220,6 +224,8 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
 1. Add a final step to share the coverage report as a comment on the pull requests.
 
+   {% raw %}
+
    ```yml
    - name: Post coverage comment
      uses: actions/github-script@v7
@@ -276,6 +282,8 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
            body: commentBody
          });
    ```
+
+   {% endraw %}
 
 1. Commit and push the changes to your `python-coverage.yml` file to the `main` branch.
 
