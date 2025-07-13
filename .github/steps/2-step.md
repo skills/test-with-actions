@@ -60,35 +60,13 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
    python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
    ```
 
-1. Around line 36, change the command to create coverage results.
+1. Around line 36, change the command to show more details in the logs.
 
    ```yml
    - name: Run tests
      run: |
        pytest --verbose
    ```
-
-1. At the very end, add another job that will verify all versions passed. Note: this is a job, not a step.
-
-   {% raw %}
-
-   ```yml
-   python-tests:
-     runs-on: ubuntu-latest
-     needs: [python-tests-by-version]
-     if: always()
-     steps:
-       - name: All pass
-         if: ${{ !(contains(needs.*.result, 'failure')) }}
-         run: exit 0
-       - name: Any fail
-         if: ${{ contains(needs.*.result, 'failure') }}
-         run: exit 1
-   ```
-
-   {% endraw %}
-
-   > **💡 Note:** This is not usually required, but it simplifies our ruleset in the next step since rulesets require selecting specific job names.
 
 1. Above the editor, on the right, click the **Commit changes...** button. Commit directly to the `main` branch.
 
@@ -147,127 +125,28 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
    - name: Install dependencies
      run: |
        pip install -r requirements.txt
+       pip install pytest==8.4.1
        pip install coverage==7.9
-       pip freeze
+       pip install pytest-cov==6.2.1
    ```
 
-1. Add steps to run the coverage report and save for later use.
+1. Add steps to run the coverage report on the `src` folder.
 
    ```yml
-   - name: Run tests to generate coverage details
+   - name: Run tests and generate coverage details
      run: |
-       coverage run -m unittest discover -s tests -p "*_test.py"
-
-   - name: Create reports in multiple formats
-     id: coverage-results
-     run: |
-       # Output full textual coverage report
-       echo "text_report<<EOF" >> $GITHUB_OUTPUT
-       coverage report >> $GITHUB_OUTPUT
-       echo "EOF" >> $GITHUB_OUTPUT
-
-       # Generate XML and HTML reports
-       coverage xml
-       coverage html
+       pytest --cov=src
    ```
 
-1. Parse XML report to get any desired results.
-
-   ```yml
-   - name: Parse XML report to get overall percentage
-     id: coverage-summary
-     continue-on-error: true
-     uses: actions/github-script@v7
-     with:
-       script: |
-         const fs = require('fs');
-
-         // Read the XML file
-         const xmlData = fs.readFileSync('coverage.xml', 'utf8');
-
-         // Extract line-rate using regex (simpler than XML parsing)
-         const lineRateMatch = xmlData.match(/line-rate="([0-9.]+)"/);
-
-         if (!lineRateMatch) {
-            throw new Error('Could not find line-rate in coverage.xml');
-         }
-
-         // Save line-rate value to an output variable
-         const lineRate = lineRateMatch[1];
-         core.setOutput('line_rate', lineRate);
-   ```
-
-1. Attach coverage reports to workflow run.
-
-   ```yml
-   - name: Attach coverage reports to workflow run
-     uses: actions/upload-artifact@v4
-     with:
-       name: coverage-reports
-       path: |
-         coverage.xml
-         htmlcov/
-   ```
-
-1. Add a final step to share the coverage report as a comment on the pull requests.
+1. Add a final step to uses a pre-made GitHub Action that shares the coverage report as a comment on the pull requests.
 
    {% raw %}
 
    ```yml
-   - name: Post coverage comment
-     uses: actions/github-script@v7
-     env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       RUN_ID: ${{ github.run_id }}
-       REPO_NAME: ${{ github.repository }}
-       ISSUE_NUMBER: ${{ github.event.pull_request.number }}
-       COVERAGE_REPORT_TEXT: ${{ steps.coverage-results.outputs.text_report }}
-       COVERAGE_REPORT_LINE_RATE: ${{ steps.coverage-summary.outputs.line_rate }}
-       MINIMUM_COVERAGE: 0.9
+   - name: Coverage comment
+     uses: py-cov-action/python-coverage-comment-action@v3
      with:
-       script: |
-         // The workflow run URL, where the reports are attached
-         const workflowRunUrl = `https://github.com/${process.env.REPO_NAME}/actions/runs/${process.env.RUN_ID}`;
-
-         // Calculate coverage percentage and determine pass/fail
-         const minimumCoverage = parseFloat(process.env.MINIMUM_COVERAGE).toFixed(2);
-         const coveragePercentage = parseFloat(process.env.COVERAGE_REPORT_LINE_RATE).toFixed(2);
-         const isPassingCoverage = coveragePercentage >= minimumCoverage;
-         const statusIcon = isPassingCoverage ? '✅' : '❌';
-         const statusText = isPassingCoverage ? 'PASS' : 'FAIL';
-
-         // Create the comment
-         const commentBody = `
-         ### ${statusIcon} Test Coverage Report
-         **Coverage Overall**: \`${coveragePercentage * 100}%\`
-         **Coverage Required**: \`${minimumCoverage * 100}%\`
-
-         <details>
-         <summary>📋 Detailed Coverage Report</summary>
-         <br>
-
-         \`\`\`
-         ${process.env.COVERAGE_REPORT_TEXT}
-         \`\`\`
-
-         </details>
-
-         ---
-
-         ### 🔗 Links
-         - [📊 View Run Details](${workflowRunUrl})
-         - [📁 Download Coverage Artifacts (XML, HTML)](${workflowRunUrl}#artifacts)
-
-         ---
-         <sub>🤖 This comment was automatically generated by the Python Coverage workflow</sub>
-         `;
-
-         github.rest.issues.createComment({
-           owner: process.env.REPO_NAME.split('/')[0],
-           repo: process.env.REPO_NAME.split('/')[1],
-           issue_number: Number(process.env.ISSUE_NUMBER),
-           body: commentBody
-         });
+       GITHUB_TOKEN: ${{ github.token }}
    ```
 
    {% endraw %}
@@ -275,7 +154,7 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 1. Commit and push the changes to your `python-coverage.yml` file to the `main` branch.
 
 > [!TIP]
-> We used custom steps here to show the flexibility of Actions. There are several AWESOME pre-made options from the community on the free [Actions Marketplace](https://github.com/marketplace?type=actions). Consider trying one of them out before you build your own!
+> Dis you notice the `uses:` statements? Those pre-made steps on the free [Actions Marketplace](https://github.com/marketplace?type=actions). Consider trying one of them out before you build your own! There are lots of AWESOME creations from the community!
 
 1. With both new workflows pushed to GitHub, Mona will review your work and post the next steps.
 
