@@ -39,13 +39,13 @@ Let's learn how to automate this ever-growing need for testing our code by using
 
    ```bash
    pip install -r requirements.txt
-   pip install coverage
+   pip install pytest coverage pytest-cov
    ```
 
-1. Run the below command to run all unit tests and save coverage information.
+1. Run the below command to run all unit tests and view coverage information.
 
    ```bash
-   coverage run -m unittest discover -s tests -p "*_test.py"
+   pytest --cov=src --verbose
    ```
 
 1. Run the below command to show a test coverage report.

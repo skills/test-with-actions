@@ -54,31 +54,18 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
        branches: ["main"]
    ```
 
-1. Around line 10, rename the job to be more specific.
-
-   ```yml
-   jobs:
-     python-tests-by-version:
-   ```
-
-1. Around line 17, update the matrix strategy to use Python versions important to our project.
+1. Around line 17, update the matrix strategy to use more Python versions.
 
    ```yml
    python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
    ```
 
-1. Around line 28, remove the unnecessary `pytest` dependency.
-
-   ```diff
-   python -m pip install flake8
-   ```
-
-1. Around line 36, change the test framework and command.
+1. Around line 36, change the command to create coverage results.
 
    ```yml
    - name: Run tests
      run: |
-       python -m unittest discover -s tests -p "*_test.py"
+       pytest --verbose
    ```
 
 1. At the very end, add another job that will verify all versions passed. Note: this is a job, not a step.

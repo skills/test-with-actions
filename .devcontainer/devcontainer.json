@@ -1,7 +1,7 @@
 {
   "name": "Python 3",
   "image": "mcr.microsoft.com/vscode/devcontainers/python:3.13",
-  "postCreateCommand": "pip install -r requirements.txt && pip install coverage",
+  "postCreateCommand": "pip install -r requirements.txt&& pip install pytest coverage pytest-cov",
   "customizations": {
     "vscode": {
       "extensions": [

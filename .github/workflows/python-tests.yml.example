@@ -1,13 +1,12 @@
 name: Python Tests
 
-# act workflow_dispatch -W '.github/workflows/python-tests.yml'
 on:
   pull_request:
     branches:
       - main
 
 jobs:
-  python-tests-by-version:
+  build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -25,23 +24,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install coverage
-          pip freeze
+          pip install pytest
 
       - name: Run tests
         run: |
-          python -m unittest discover -s tests -p "*_test.py"
-
-  python-tests:
-    runs-on: ubuntu-latest
-    needs: [python-tests-by-version]
-    if: always()
-    steps:
-      - name: All pass
-        if: ${{ !(contains(needs.*.result, 'failure')) }}
-        run: exit 0
-      - name: Any fail
-        if: ${{ contains(needs.*.result, 'failure') }}
-        run: exit 1
-
-      
+          pytest --verbose

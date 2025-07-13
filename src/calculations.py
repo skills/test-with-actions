@@ -1,6 +1,11 @@
+# System Modules
+import math
+
+# Installed Modules
+# - None
+
 def area_of_circle(radius):
     """Calculate the area of a circle given its radius."""
-    import math
     if radius < 0:
         raise ValueError("Radius cannot be negative")
     return math.pi * radius ** 2
