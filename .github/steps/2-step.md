@@ -153,25 +153,3 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 > Dis you notice the `uses:` statements? Those pre-made steps on the free [Actions Marketplace](https://github.com/marketplace?type=actions). Consider trying one of them out before you build your own! There are lots of AWESOME creations from the community!
 
 1. With both new workflows pushed to GitHub, Mona will review your work and post the next steps.
-
-<!-- ### (optional) ⌨️ Activity: Filter triggers by file type
-
-Our current workflow will trigger on any pull request targeting `main`, even if it doesn't change the code. That is unnecessary. -->
-
-<!-- ### (optional) Activity: Ask Copilot to enable package caching
-
-If you have Copilot, give the following prompt a try.
-It will modify your workflow add caching between the workflow runs, making it much faster. Nice!
-
-```prompt
-Hey Copilot, these workflows take a while to run. Can you enable enable caching for installing the python version and required packages? The goal is to avoid constantly re-downloading the resources, which should make things faster.
-```
-
-<details>
-<summary>Example workflow</summary>
-
-```yml
-sample
-```
-
-</details> -->

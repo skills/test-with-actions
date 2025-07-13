@@ -1,9 +1,5 @@
 ## Step 3: Trigger the workflows
 
-<!-- Take a look at the merge box, you'll notice you can merge this even though the review process hasn't been met. -->
-
-<!-- Protected branches ensure that collaborators on your repository cannot make irrevocable changes to branches. Enabling protected branches also allows you to enable other optional checks and requirements, like required status checks and required reviews. -->
-
 As specified in our workflows, they will only run when a pull request is targeting the `main` branch.
 
 Pull requests have a nice advantage when a workflow is associated with them. The run status and results can be displayed directly in the conversation feed.

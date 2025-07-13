@@ -5,7 +5,7 @@ Even worse, the some tests failed and there was nothing to prevent merging the b
 
 Let's fix this to avoid anyone (accidentally) bypassing verification.
 
-### ⌨️ Activity: Add branch protections
+### ⌨️ Activity: Add branch protection
 
 1. In the top navigation, select the **Settings** tab.
 
