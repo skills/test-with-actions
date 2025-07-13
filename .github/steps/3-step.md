@@ -41,7 +41,7 @@ Pull requests have a nice advantage when a workflow is associated with them. The
    - **source:** `reenable-unit-test`
    - **title**: `Reenable unit test that was disabled`
 
-1. After the pull request is created, look near the Merge button to see the many workflows running.
+1. After the pull request is created, look near the Merge button to see many workflows running.
 
    - Our coverage workflow will fail, letting us know we have a test to fix.
 

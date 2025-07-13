@@ -54,14 +54,15 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check failure test cases
-        id: check-failure-test-cases
+      - name: Check test case uncommented
+        id: check-test-uncommented
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: tests/calculations_test.py
-          keyphrase: self.assertRaises
-          minimum-occurrences: 1
+          keyphrase: '# def test_get_nth_fibonacci_ten'
+          maximum-occurrences: 0
+          minimum-occurrences: 0
           case-sensitive: false
 
       - name: Update comment - step results
@@ -75,8 +76,8 @@ jobs:
           vars: |
             step_number: 3
             results_table:
-              - description: "Failure test cases added"
-                passed: ${{ steps.check-failure-test-cases.outcome == 'success' }}
+              - description: "Test case re-enabled"
+                passed: ${{ steps.check-test-uncommented.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')

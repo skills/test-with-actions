@@ -34,18 +34,6 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
    <img width="250" alt="image" src="https://github.com/user-attachments/assets/4a2ff616-aedd-41b5-a24c-82014e98bbee" />
 
-1. Above the file editor, update the file name.
-
-   ```txt
-   python-tests.yml
-   ```
-
-1. Around line 4, update the workflow name.
-
-   ```yml
-   name: Python Tests
-   ```
-
 1. Around line 6, simplify the `on` trigger to only use pull requests.
 
    ```yml
@@ -132,7 +120,7 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
        pytest --cov=src
    ```
 
-1. Add a final step to uses a pre-made GitHub Action that shares the coverage report as a comment on the pull requests.
+1. Add a final step that uses a pre-made GitHub Action to share the coverage report as a comment on the pull request.
 
    {% raw %}
 

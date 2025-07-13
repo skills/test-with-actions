@@ -62,8 +62,8 @@ jobs:
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
-          text-file: .github/workflows/python-tests.yml
-          keyphrase: python -m unittest discover
+          text-file: .github/workflows/python-package.yml
+          keyphrase: pytest
           minimum-occurrences: 1
           case-sensitive: false
 
@@ -73,7 +73,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: .github/workflows/python-coverage.yml
-          keyphrase: coverage report
+          keyphrase: pytest --cov=src
           minimum-occurrences: 1
           case-sensitive: false
 

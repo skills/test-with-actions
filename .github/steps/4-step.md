@@ -25,17 +25,19 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
    <img width="300" alt="target branch settings" src="https://github.com/user-attachments/assets/9b68fd13-8348-401e-b1a3-6fd2f8744759" />
 
-   <img width="300" alt="required status checks" src="https://github.com/user-attachments/assets/a5fe16aa-9d3a-4ab1-9406-a288b6c7b2b5" />
+   <img width="300" alt="required status checks" src="https://github.com/user-attachments/assets/b824ab47-f9c0-4ffa-9e35-2f91eb0ffcc7" />
 
 1. Click **Create**.
 
 1. Navigate back to the pull request and refresh the page.
 
-1. The **Merge** button is now disabled! Nice! 🥰
+1. Scroll to the bottom to find failed workflows and the **Merge** button now disabled! Nice! 🥰
 
-   <img width="500" alt="failed tests and disabled merge button" src="https://github.com/user-attachments/assets/6dd46999-f98f-42fa-af65-b553c4e59c8e" />
+   <img width="500" alt="failed tests and disabled merge button" src="https://github.com/user-attachments/assets/9ae254d7-b00b-4fc9-aa30-e9b840d1cc87" />
 
-1. In the pull request, find the comment that shares information about the coverage and failed tests. There are 2 issues preventing merging.
+1. Click on the `Python Coverage` workflow to view the logs. It will automatically navigate to the failed logs.
+
+1. After some inspection, there are 2 issues preventing merging.
 
    - 1 test is failing.
    - Coverage is below the 90% requirement.
@@ -65,9 +67,9 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
       assert result == 55
    ```
 
-1. Commit the change and wait for the updated coverage report.
+1. Commit the corrected test and wait for the workflows to run again.
 
-   - We will now see that all tests pass, but unfortunately the coverage is still too low.
+   - This time the tests pass and we receive a detailed coverage report.
 
 ## Activity: Fix low test coverage
 
@@ -110,9 +112,12 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
    </details>
 
-1. Commit and push the changes.
+1. Commit and push the 2 new tests.
 
-1. Wait a moment for the tests to complete. If they all pass, the merge button should activate!
+1. Wait a moment for the workflows to run one final time.
+
+   - The coverage comment will update to 100%.
+   - The merge button will activate!
 
 ### Activity: Merge
 

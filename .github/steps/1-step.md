@@ -48,12 +48,6 @@ Let's learn how to automate this ever-growing need for testing our code by using
    pytest --cov=src --verbose
    ```
 
-1. Run the below command to show a test coverage report.
-
-   ```bash
-   coverage report
-   ```
-
 1. Add a comment to let Mona know the results of your coverage report. After reviewing, she will provide the next steps.
 
 ```md
