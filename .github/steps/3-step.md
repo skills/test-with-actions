@@ -15,33 +15,26 @@ Pull requests have a nice advantage when a workflow is associated with them. The
 1. Create a new branch based on `main` with the following name and **publish** it to GitHub.
 
    ```txt
-   add-failure-test-cases
+   reenable-unit-test
    ```
 
 1. Open the `tests/calculations_test.py` file.
 
-1. Add the following 2 entries. (They are commented out.)
+1. After investigating the code, we see a commented out test on line 56. Uncomment it to re-enable it.
+
+   > Hopefully they didn't disable it to get around testing! 😱
 
    ```py
-   def test_area_of_circle_negative_radius(self):
-       """Test with a negative radius to raise ValueError."""
-       # Arrange
-       radius = -1
+   def test_get_nth_fibonacci_ten():
+    """Test with n=10."""
+    # Arrange
+    n = 10
 
-       # Act & Assert
-       with self.assertRaises(ValueError):
-           area_of_circle(radius)
-   ```
+    # Act
+    result = get_nth_fibonacci(n)
 
-   ```py
-   def test_get_nth_fibonacci_negative(self):
-     """Test with a negative number to raise ValueError."""
-     # Arrange
-     n = -1
-
-     # Act & Assert
-     with self.assertRaises(ValueError):
-         get_nth_fibonacci(n)
+    # Assert
+    assert result == 89
    ```
 
 1. Commit the changes and push them to GitHub.
@@ -49,13 +42,12 @@ Pull requests have a nice advantage when a workflow is associated with them. The
 1. Return to the browser and create a pull request. Use the following details.
 
    - **base:** `main`
-   - **source:** `add-failure-test-cases`
-   - **title**: `Add tests to verify failure cases`
+   - **source:** `reenable-unit-test`
+   - **title**: `Reenable unit test that was disabled`
 
 1. After the pull request is created, look near the Merge button to see the many workflows running.
 
-   - Some of the workflows will fail, letting us know we have a test to fix.
-   - The test coverage report will come shortly as a comment.
+   - Our coverage workflow will fail, letting us know we have a test to fix.
 
 1. With the pull request started, Mona should be busy checking your work and preparing the next steps.
 

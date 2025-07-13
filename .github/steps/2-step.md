@@ -54,12 +54,6 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
        branches: ["main"]
    ```
 
-1. Around line 17, update the matrix strategy to use more Python versions.
-
-   ```yml
-   python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
-   ```
-
 1. Around line 36, change the command to show more details in the logs.
 
    ```yml
@@ -147,6 +141,8 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
      uses: py-cov-action/python-coverage-comment-action@v3
      with:
        GITHUB_TOKEN: ${{ github.token }}
+       MINIMUM_GREEN: 90
+       MINIMUM_ORANGE: 70
    ```
 
    {% endraw %}
