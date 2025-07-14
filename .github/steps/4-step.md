@@ -127,6 +127,8 @@ Let's add some more tests to increase coverage.
    - The coverage comment will update to 100%.
    - The merge button will activate!
 
-1. Click the **Merge** button. Congrats, you are all done!
+1. Click the **Merge** button.
 
    <img width="500" alt="image" src="https://github.com/user-attachments/assets/1c75d9bc-62e9-429f-ad4d-45ea8b7d1a73" />
+
+1. With full coverage, all tests passing, and the pull request merged, Mona will share a final review. Congrats, you are all done!
