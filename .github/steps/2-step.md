@@ -61,7 +61,7 @@ Indention of `.yml` files is important. If you are getting syntax errors, that m
 
 Finished workflow file: `.github/workflows/python-package.yml.example`
 
-<details>
+</details>
 
 ### ⌨️ Activity: Add a workflow to show test coverage
 
