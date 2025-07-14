@@ -150,10 +150,10 @@ Finished workflow file: `.github/workflows/python-package.yml.example`
 
 1. Commit and push the changes to your `python-coverage.yml` file to the `main` branch.
 
-> [!TIP]
-> Dis you notice the `uses:` statements? Those are pre-made steps from the free [Actions Marketplace](https://github.com/marketplace?type=actions). Consider trying one of them out before you create your own custom scripts (to maintain)! There are lots of AWESOME creations from the community!
-
 1. With both new workflows pushed to GitHub, Mona will review your work and post the next steps.
+
+> [!TIP]
+> Did you notice the many `uses:` statements? Those are pre-made steps from the free [Actions Marketplace](https://github.com/marketplace?type=actions). Consider trying one of them out before you create your own custom scripts (to maintain)! There are lots of awesome creations from the community!
 
 <details>
 <summary>Having trouble? 🤷‍♂️</summary>
@@ -162,4 +162,4 @@ Indention of `.yml` files is important. If you are getting syntax errors, that m
 
 Finished workflow file: `.github/workflows/python-coverage.yml.example`
 
-<details>
+</details>
