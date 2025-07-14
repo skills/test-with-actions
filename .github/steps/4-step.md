@@ -21,7 +21,9 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
    - **Require status checks to pass**: ☑️ Checked
      - `python-coverage`
 
-   > ❕ **Important:** To keep the lesson simple, we are only checking the coverage workflow.
+   <br/>
+
+   > 🪧 **Note:** To keep the lesson simple, we are only checking the coverage workflow. Feel free to experiment though!
 
    <img width="300" alt="target branch settings" src="https://github.com/user-attachments/assets/9b68fd13-8348-401e-b1a3-6fd2f8744759" />
 

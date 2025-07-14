@@ -4,21 +4,21 @@ As specified in our workflows, they will only run when a pull request is targeti
 
 Pull requests have a nice advantage when a workflow is associated with them. The run status and results can be displayed directly in the conversation feed.
 
-### ⌨️ Activity: Make a code change
+### ⌨️ Activity: Start a PR and propose a code change
 
 1. Return to the VS Code Codespace.
 
-1. Create a new branch based on `main` with the following name and **publish** it to GitHub.
+1. Create a new branch based from `main` with the following name and **publish** it to GitHub.
 
    ```txt
    reenable-unit-test
    ```
 
-1. Open the `tests/calculations_test.py` file.
+1. Double check that you are on the `reenable-unit-test` branch, then open the `tests/calculations_test.py` file.
 
 1. After investigating the code, we see a commented out test on line 56. Uncomment it to re-enable it.
 
-   > Hopefully they didn't disable it to get around testing! 😱
+   > Hopefully it wasn't disable to get around testing! 😱
 
    ```py
    def test_get_nth_fibonacci_ten():
