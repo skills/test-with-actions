@@ -37,6 +37,9 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
    <img width="500" alt="failed tests and disabled merge button" src="https://github.com/user-attachments/assets/9ae254d7-b00b-4fc9-aa30-e9b840d1cc87" />
 
+> [!TIP]
+> Interested to learn more ways to prepare your project for collaboration? Check out the [Introduction to Repository Management](https://github.com/skills/introduction-to-repository-management) exercise next!
+
 ### Activity: Fix the broken test
 
 Lets investigate why our testing workflow failed. Is it misconfigured or is some code bac? Maybe there was a reason that test was disabled?!
