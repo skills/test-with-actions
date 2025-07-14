@@ -54,6 +54,15 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
 1. Above the editor, on the right, click the **Commit changes...** button. Commit directly to the `main` branch.
 
+<details>
+<summary>Having trouble? 🤷‍♂️</summary>
+
+Indention of `.yml` files is important. If you are getting syntax errors, that may be the reason.
+
+Finished workflow file: `.github/workflows/python-package.yml.example`
+
+<details>
+
 ### ⌨️ Activity: Add a workflow to show test coverage
 
 1. Switch to the VS Code Codespace.
@@ -145,3 +154,12 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 > Dis you notice the `uses:` statements? Those are pre-made steps from the free [Actions Marketplace](https://github.com/marketplace?type=actions). Consider trying one of them out before you create your own custom scripts (to maintain)! There are lots of AWESOME creations from the community!
 
 1. With both new workflows pushed to GitHub, Mona will review your work and post the next steps.
+
+<details>
+<summary>Having trouble? 🤷‍♂️</summary>
+
+Indention of `.yml` files is important. If you are getting syntax errors, that may be the reason.
+
+Finished workflow file: `.github/workflows/python-coverage.yml.example`
+
+<details>
