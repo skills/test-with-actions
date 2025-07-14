@@ -37,14 +37,16 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
    <img width="500" alt="failed tests and disabled merge button" src="https://github.com/user-attachments/assets/9ae254d7-b00b-4fc9-aa30-e9b840d1cc87" />
 
+### Activity: Fix the broken test
+
+Lets investigate why our testing workflow failed. Is it misconfigured or is some code bac? Maybe there was a reason that test was disabled?!
+
 1. Click on the `Python Coverage` workflow to view the logs. It will automatically navigate to the failed logs.
 
 1. After some inspection, there are 2 issues preventing merging.
 
    - 1 test is failing.
    - Coverage is below the 90% requirement.
-
-### Activity: Fix broken test
 
 1. Switch to the VS Code Codespace.
 
@@ -69,13 +71,17 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
       assert result == 55
    ```
 
-1. Commit the corrected test and wait for the workflows to run again.
+1. Commit and push the corrected test code then wait for the workflows to run again.
 
    - This time the tests pass and we receive a detailed coverage report.
 
 ## Activity: Fix low test coverage
 
-1. Let's ask GitHub Copilot to find missing test cases.
+With our test corrected, we are now getting coverage results.
+Unfortunately it is below the 90% requirement.
+Let's add some more tests to increase coverage.
+
+1. Let's ask GitHub Copilot to find missing test cases. Alternately, you can expand the manual steps below.
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -120,8 +126,6 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
    - The coverage comment will update to 100%.
    - The merge button will activate!
-
-### Activity: Merge
 
 1. Click the **Merge** button. Congrats, you are all done!
 

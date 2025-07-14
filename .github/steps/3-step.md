@@ -41,6 +41,17 @@ Pull requests have a nice advantage when a workflow is associated with them. The
    - **source:** `reenable-unit-test`
    - **title**: `Reenable unit test that was disabled`
 
+   <br/>
+   <details>
+   <summary><b>Having Trouble:</b> Can't create a pull request? 🤷‍♂️</summary>
+
+   Did you accidentally commit to the `main` branch? Here is a command to undo the last commit and force update the repository on GitHub. Be careful not to go back too many steps though! You don't want to remove your new workflows!
+
+   ```bash
+   git reset --hard HEAD~1
+   git push -f
+   ```
+
 1. After the pull request is created, look near the Merge button to see many workflows running.
 
    - Our coverage workflow will fail, letting us know we have a test to fix.
@@ -48,8 +59,8 @@ Pull requests have a nice advantage when a workflow is associated with them. The
 1. With the pull request started, Mona should be busy checking your work and preparing the next steps.
 
 <details>
-<summary>Need help?</summary>
+<summary>Having trouble?  🤷‍♂️</summary>
 
-- If the checks don't appear or updated, try refreshing the page. It's possible the workflow ran and the page just hasn't been updated with that change.
+- If the checks don't appear updated, try refreshing the page. It's possible the workflow ran and the page just hasn't been updated with the change.
 
 </details>
