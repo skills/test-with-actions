@@ -12,8 +12,6 @@ Let's learn how to automate this ever-growing need for testing our code by using
 
 ### ⌨️ Activity: Start our sample Python application
 
-1. Open a new browser tab, and work through the following steps in that tab while you read the instructions in this tab.
-
 1. Use the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
 
    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
@@ -50,7 +48,8 @@ Let's learn how to automate this ever-growing need for testing our code by using
 
 1. Add a comment to let Mona know the results of your coverage report. After reviewing, she will provide the next steps.
 
-```md
-@professortocat, I've run my coverage report.
-It looks good! Over 90%! :) What's next?
-```
+   ```md
+   @professortocat, I've run my coverage report.
+   Seems there is some opportunity to increase the test coverage. 🧐
+   What should we do next?
+   ```
