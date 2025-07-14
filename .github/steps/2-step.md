@@ -116,8 +116,7 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
    ```yml
    - name: Run tests and generate coverage details
-     run: |
-       pytest --cov=src
+     run: pytest --cov=src
    ```
 
 1. Add a final step that uses a pre-made GitHub Action to share the coverage report as a comment on the pull request.
@@ -131,6 +130,9 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
        GITHUB_TOKEN: ${{ github.token }}
        MINIMUM_GREEN: 90
        MINIMUM_ORANGE: 70
+
+   - name: Fail if below threshold
+     run: coverage report --fail-under=90
    ```
 
    {% endraw %}
