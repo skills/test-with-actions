@@ -86,7 +86,7 @@ jobs:
           edit-mode: replace
           file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           vars: |
-            step_number: 3
+            step_number: 2
             results_table:
               - description: "Python package workflow created"
                 passed: ${{ steps.check-python-package-workflow.outcome == 'success' }}
