@@ -57,8 +57,8 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check for python tests workflow
-        id: check-python-tests-workflow
+      - name: Check for python package workflow
+        id: check-python-package-workflow
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
@@ -88,8 +88,8 @@ jobs:
           vars: |
             step_number: 3
             results_table:
-              - description: "Python tests workflow created"
-                passed: ${{ steps.check-python-tests-workflow.outcome == 'success' }}
+              - description: "Python package workflow created"
+                passed: ${{ steps.check-python-package-workflow.outcome == 'success' }}
               - description: "Python coverage workflow created"
                 passed: ${{ steps.check-python-coverage-workflow.outcome == 'success' }}
 
