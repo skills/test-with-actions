@@ -33,9 +33,11 @@ Let's learn how to automate this ever-growing need for testing our code by using
 
    > 💡 **Tip**: The keyboard shortcut is `CTRL` + `J`.
 
-1. Run the below command to install the required Python libraries and tools to show code coverage.
+1. Run the below command to create a virtual environment, then install the required Python libraries and tools to show code coverage.
 
    ```bash
+   python -m venv .venv/calculations
+   source .venv/calculations/bin/activate
    pip install -r requirements.txt
    pip install pytest coverage pytest-cov
    ```
