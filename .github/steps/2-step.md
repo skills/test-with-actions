@@ -4,7 +4,7 @@ The best way to add automation to your project's repository is with a GitHub Act
 
 ### What are the parts of workflow?
 
-![An illustration with a left half and a right half. On the left: illustration of how GitHub Actions terms are encapsulated. At the highest level: workflows and event triggers. Inside workflows: jobs and definition of the build environment. Inside jobs: steps. Inside steps: a call to an action. On the right: the evaluated sequence: workflow, job, step, action.](https://user-images.githubusercontent.com/6351798/88589835-f5ce0900-d016-11ea-8c8a-0e7d7907c713.png)
+![An illustration with a left half and a right half. On the left: illustration of how GitHub Actions terms are encapsulated. At the highest level: workflows and event triggers. Inside workflows: jobs and definition of the build environment. Inside jobs: steps. Inside steps: a call to an action. On the right: the evaluated sequence: workflow, job, step, action.](../images/github-actions-workflow-diagram.png)
 
 - **Workflow**: A unit of automation from start to finish. It begins when the trigger (`on`) matches an activity in the repository. It consists of 1 or more jobs.
 
@@ -26,15 +26,15 @@ You can explore all of the configuration options in the [GitHub Actions Docs](ht
 
 1. In the left navigation, above list of workflows, click the **New workflow** button.
 
-   <img width="250" alt="image" src="https://github.com/user-attachments/assets/babb2cec-dc4c-42a2-a28c-69da8e9ea79d" />
+   <img width="250" alt="image" src="../images/new-workflow-button.png" />
 
 1. Enter `python` into the search box and click the **Enter** button.
 
-   <img width="300" alt="search box with 'python' value" src="https://github.com/user-attachments/assets/34f2795c-85e8-4dc8-b03b-eac73e70e309" />
+   <img width="300" alt="search box with 'python' value" src="../images/python-search-box.png" />
 
 1. Find the **Python package** workflow and click the **Configure** button to open a file editor with a pre-made workflow.
 
-   <img width="250" alt="image" src="https://github.com/user-attachments/assets/4a2ff616-aedd-41b5-a24c-82014e98bbee" />
+   <img width="250" alt="image" src="../images/python-package-configure.png" />
 
 1. Around line 6, simplify the `on` trigger. Remove the `push` trigger and keep the `pull_request` trigger.
 
@@ -69,7 +69,7 @@ Finished workflow file: `.github/workflows/python-package.yml.example`
 
 1. Check the status bar for a pending update. Click it to pull your recently committed workflow.
 
-   <img width="130" alt="image" src="https://github.com/user-attachments/assets/c3eb17cf-a18e-4fae-bf18-cda900c7c6d3" />
+   <img width="130" alt="image" src="../images/sync-changes-button.png" />
 
 1. In the left navigation, select the **Explorer** tab to show the project files.
 
