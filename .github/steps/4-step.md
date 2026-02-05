@@ -25,9 +25,9 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
    > 🪧 **Note:** To keep the lesson simple, we are only checking the coverage workflow. Feel free to experiment though!
 
-   <img width="300" alt="target branch settings" src="https://github.com/user-attachments/assets/9b68fd13-8348-401e-b1a3-6fd2f8744759" />
+   <img width="300" alt="target branch settings" src="../images/branch-protection-target-settings.png" />
 
-   <img width="300" alt="required status checks" src="https://github.com/user-attachments/assets/b824ab47-f9c0-4ffa-9e35-2f91eb0ffcc7" />
+   <img width="300" alt="required status checks" src="../images/required-status-checks.png" />
 
 1. Click **Create**.
 
@@ -35,7 +35,7 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
 1. Scroll to the bottom to find failed workflows and the **Merge** button now disabled! Nice! 🥰
 
-   <img width="500" alt="failed tests and disabled merge button" src="https://github.com/user-attachments/assets/9ae254d7-b00b-4fc9-aa30-e9b840d1cc87" />
+   <img width="500" alt="failed tests and disabled merge button" src="../images/failed-tests-disabled-merge.png" />
 
 > [!TIP]
 > Interested to learn more ways to prepare your project for collaboration? Check out the [Introduction to Repository Management](https://github.com/skills/introduction-to-repository-management) exercise next!
@@ -132,6 +132,6 @@ Let's add some more tests to increase coverage.
 
 1. Click the **Merge** button.
 
-   <img width="500" alt="image" src="https://github.com/user-attachments/assets/1c75d9bc-62e9-429f-ad4d-45ea8b7d1a73" />
+   <img width="500" alt="image" src="../images/merge-button-active.png" />
 
 1. With full coverage, all tests passing, and the pull request merged, Mona will share a final review. Congrats, you are all done!
