@@ -1,0 +1,6 @@
+name: CI practical
+
+on:
+  pull_request: :
+    branches:
+      - main
