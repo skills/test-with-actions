@@ -93,6 +93,8 @@ Finished workflow file: `.github/workflows/python-package.yml.example`
 
    permissions:
      pull-requests: write
+   #If your repo's visibility is set to 'private' uncomment the following line
+     #contents: read  
    ```
 
 1. Add the `python-coverage` job and a first step that gets the repository content.
