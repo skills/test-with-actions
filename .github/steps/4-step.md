@@ -1,7 +1,7 @@
 ## Step 4: Enforce workflows
 
 You may have noticed that the merge button was still active before our tests finished.
-Even worse, the some tests failed and there was nothing to prevent merging the broken code anyway! 😱
+Even worse, some tests failed and there was nothing to prevent merging the broken code anyway! 😱
 
 Let's fix this to avoid anyone (accidentally) bypassing verification.
 
@@ -42,7 +42,7 @@ Let's fix this to avoid anyone (accidentally) bypassing verification.
 
 ### Activity: Fix the broken test
 
-Lets investigate why our testing workflow failed. Is it misconfigured or is some code bac? Maybe there was a reason that test was disabled?!
+Let's investigate why our testing workflow failed. Is it misconfigured or is some code bad? Maybe there was a reason that test was disabled?!
 
 1. Click on the `Python Coverage` workflow to view the logs. It will automatically navigate to the failed logs.
 
@@ -61,7 +61,7 @@ Lets investigate why our testing workflow failed. Is it misconfigured or is some
 
 1. Change the test to use the correct assert value.
 
-   ```bash
+   ```python
    def test_get_nth_fibonacci_ten():
       """Test with n=10."""
       # Arrange

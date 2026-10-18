@@ -16,9 +16,9 @@ Pull requests have a nice advantage when a workflow is associated with them. The
 
 1. Double check that you are on the `reenable-unit-test` branch, then open the `tests/calculations_test.py` file.
 
-1. After investigating the code, we see a commented out test on line 56. Uncomment it to re-enable it.
+1. After investigating the code, we see a commented out test on line 61. Uncomment it to re-enable it.
 
-   > Hopefully it wasn't disable to get around testing! 😱
+   > Hopefully it wasn't disabled to get around testing! 😱
 
    ```py
    def test_get_nth_fibonacci_ten():
